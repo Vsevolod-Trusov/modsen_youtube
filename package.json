@@ -6,9 +6,12 @@
   "repository": "https://github.com/Vsevolod-Trusov/modsen_youtube.git",
   "author": "vsevolod <vsevolod_trusov_00@mail.ru>",
   "license": "MIT",
+  "homepage": "https://vsevolod-trusov.github.io/modsen_youtube",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "predeploy": "npx yarn run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@babel/core": "^7.24.3",
@@ -36,6 +39,7 @@
     "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
+    "gh-pages": "^6.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.8"
