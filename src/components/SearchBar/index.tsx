@@ -3,14 +3,16 @@ import React, { FC } from 'react';
 import { SearchIcon } from '@/assets';
 import { Image, SearchButton, SearchInput } from '@/components';
 
-import { StyledSearchSection } from './styled';
+import { StyledSearchImageWrapper, StyledSearchSection } from './styled';
 
 const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
   return (
     <StyledSearchSection>
       <SearchInput placeholder={placeholder} />
       <SearchButton>
-        <Image src={SearchIcon} />
+        <StyledSearchImageWrapper>
+          <Image src={SearchIcon} />
+        </StyledSearchImageWrapper>
       </SearchButton>
     </StyledSearchSection>
   );

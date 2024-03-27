@@ -6,4 +6,9 @@ const StyledSearchSection = styled('div')({
   width: '100%',
 });
 
-export { StyledSearchSection };
+const StyledSearchImageWrapper = styled('div')({
+  display: 'flex',
+  width: '80%',
+});
+
+export { StyledSearchImageWrapper, StyledSearchSection };
