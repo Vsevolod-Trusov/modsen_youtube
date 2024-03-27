@@ -2,8 +2,7 @@ import { styled } from 'styled-components';
 
 const StyledImage = styled('img')(({ theme }) => ({
   display: 'flex',
-  width: '80%',
-  color: theme.colors.lightGray,
+  width: '100%',
 }));
 
 export { StyledImage };
