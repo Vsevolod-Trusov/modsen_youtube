@@ -12,11 +12,16 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
   lineHeight: '16.41px',
   textAlign: 'center',
 
+  '&:hover': {
+    backgroundColor: theme.colors.gray,
+    transition: '.1s',
+  },
+
   '&:active': {
     backgroundColor: theme.colors.black,
     color: theme.colors.white,
     border: `2px solid ${theme.colors.black}`,
-    transition: '.2s',
+    transition: '.1s',
   },
 }));
 
