@@ -1,0 +1,3 @@
+interface ISearchBar {
+  placeholder?: string;
+}
