@@ -16,7 +16,6 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
     backgroundColor: theme.colors.gray,
     transition: '.1s',
   },
-
   '&:active': {
     backgroundColor: theme.colors.black,
     color: theme.colors.white,
