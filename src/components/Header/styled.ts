@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 const StyledHeaderContainer = styled('div')({
-  height: '120px',
+  height: '160px',
   backgroundColor: 'transprent',
   flexShrink: '0',
 });
