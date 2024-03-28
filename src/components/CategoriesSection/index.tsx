@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { FilterButton } from '../UI';
 import { StyledContainer, StyledWrapper } from './styled';
@@ -13,7 +13,7 @@ const CATEGORIES = [
   'documentary',
 ];
 
-const CategoriesSection = () => {
+const CategoriesSection: FC = () => {
   return (
     <StyledContainer>
       <StyledWrapper>
