@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import {
   StyledInput,
@@ -7,7 +7,7 @@ import {
   StyledToggleContainer,
 } from './styled';
 
-const ToggleButton = () => {
+const ToggleButton: FC = () => {
   return (
     <StyledToggleContainer>
       <StyledLabel>
