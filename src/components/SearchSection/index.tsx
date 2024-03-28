@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { FC } from 'react';
 
 import { Logo, SearchBar, ToggleButton } from '@/components';
 import { DICTIONARY } from '@/contants';
 
 import { StyledContainer } from './styled';
 
-const SearchSection = () => {
+const SearchSection: FC = () => {
   return (
     <StyledContainer>
       <div>
