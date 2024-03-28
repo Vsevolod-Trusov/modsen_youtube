@@ -1,13 +1,20 @@
 import React from 'react';
 
-import { StyledInput, StyledLabel, StyledSpan } from './styled';
+import {
+  StyledInput,
+  StyledLabel,
+  StyledSpan,
+  StyledToggleContainer,
+} from './styled';
 
 const ToggleButton = () => {
   return (
-    <StyledLabel>
-      <StyledInput type='checkbox' className='input' />
-      <StyledSpan className='slider'></StyledSpan>
-    </StyledLabel>
+    <StyledToggleContainer>
+      <StyledLabel>
+        <StyledInput type='checkbox' className='input' />
+        <StyledSpan className='slider'></StyledSpan>
+      </StyledLabel>
+    </StyledToggleContainer>
   );
 };
 export default ToggleButton;
