@@ -1,9 +1,18 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
 
-import { StyledHeaderContainer } from './styled';
+import { CategoriesSection, SearchSection } from '@/components';
 
-const Header: FC<PropsWithChildren> = ({ children }) => {
-  return <StyledHeaderContainer>{children}</StyledHeaderContainer>;
+import { StyledHeaderContainer, StyledHeaderWrapper } from './styled';
+
+const Header: FC = () => {
+  return (
+    <StyledHeaderContainer>
+      <StyledHeaderWrapper>
+        <SearchSection />
+        <CategoriesSection />
+      </StyledHeaderWrapper>
+    </StyledHeaderContainer>
+  );
 };
 
 export default Header;
