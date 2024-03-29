@@ -22,6 +22,10 @@ const StyledInput = styled('input')(({ theme }) => ({
     borderColor: theme.colors.darkGray,
     transition: '.1s',
   },
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    width: '100%',
+  },
 }));
 
 export { StyledInput };

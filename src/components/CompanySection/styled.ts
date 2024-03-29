@@ -9,6 +9,10 @@ const StyledContainer = styled('div')(({ theme }) => ({
   fontSize: '24px',
   fontWeight: 500,
   lineHeight: '28px',
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    fontSize: '12px',
+  },
 }));
 
 export { StyledContainer };

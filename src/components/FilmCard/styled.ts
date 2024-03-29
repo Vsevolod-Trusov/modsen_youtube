@@ -14,6 +14,10 @@ const StyledContainer = styled('div')(({ theme }) => ({
     background: theme.colors.darkGray,
     transition: '.1s',
   },
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    flexBasis: '100%',
+  },
 }));
 
 const StyledPreviewSection = styled('div')({
@@ -29,7 +33,7 @@ const StyledDescriptionSection = styled('div')({
   padding: '15px 0',
 });
 
-const StyledAuthorSection = styled('div')({
+const StyledAuthorSection = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '100%',
   height: '100%',
@@ -40,17 +44,30 @@ const StyledAuthorSection = styled('div')({
   fontFamily: 'Roboto',
   fontWeight: 500,
   lineHeight: '18px',
-});
 
-const StyledTitle = styled('h3')({
+  [`@media ${theme.breakpoints.sm}`]: {
+    marginTop: 0,
+  },
+}));
+
+const StyledTitle = styled('h3')(({ theme }) => ({
   fontSize: '16px',
-});
 
-const StyledSubTitle = styled('span')({
+  [`@media ${theme.breakpoints.sm}`]: {
+    fontSize: '14px',
+    fontWeight: 400,
+  },
+}));
+
+const StyledSubTitle = styled('span')(({ theme }) => ({
   fontSize: '14px',
   wordSpacing: '3px',
   padding: '2px',
-});
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    fontWeight: 400,
+  },
+}));
 
 const StyledAvatarContainer = styled('div')({
   position: 'relative',

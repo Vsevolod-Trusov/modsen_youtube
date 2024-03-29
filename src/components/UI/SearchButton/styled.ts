@@ -20,6 +20,10 @@ const StyledButton = styled('div')(({ theme }) => ({
     background: theme.colors.white,
     transition: '.1s',
   },
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    padding: '10px',
+  },
 }));
 
 export { StyledButton };

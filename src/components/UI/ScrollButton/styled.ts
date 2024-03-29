@@ -22,6 +22,12 @@ const StyledButton = styled('button')(({ theme }) => ({
     backgroundColor: theme.colors.lightOrange,
     transition: '.1s',
   },
+
+  [`@media ${theme.breakpoints.sm}`]: {
+    width: '230px',
+    height: '32px',
+    fontSize: '16px',
+  },
 }));
 
 export { StyledButton };
