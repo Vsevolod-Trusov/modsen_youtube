@@ -1,9 +1,15 @@
 import React, { FC } from 'react';
 
-import { Logo, SearchBar, ToggleButton } from '@/components';
+import { Logo, MenuButton, SearchBar, ToggleButton } from '@/components';
 import { DICTIONARY } from '@/contants';
 
-import { StyledContainer } from './styled';
+import {
+  HideContainer,
+  ShowContainer,
+  StyledContainer,
+  StyledSearchSection,
+  StyledSearchShowContainer,
+} from './styled';
 
 const SearchSection: FC = () => {
   return (
@@ -11,10 +17,18 @@ const SearchSection: FC = () => {
       <div>
         <Logo title={DICTIONARY.LOGO_TITLE} />
       </div>
-      <SearchBar placeholder={DICTIONARY.SEARCH_INPUT_PLACEHOLDER} />
-      <div>
+      <StyledSearchSection>
+        <SearchBar placeholder={DICTIONARY.SEARCH_INPUT_PLACEHOLDER} />
+      </StyledSearchSection>
+      <HideContainer>
         <ToggleButton />
-      </div>
+      </HideContainer>
+      <ShowContainer>
+        <MenuButton />
+      </ShowContainer>
+      <StyledSearchShowContainer>
+        <SearchBar placeholder={DICTIONARY.SEARCH_INPUT_PLACEHOLDER} />
+      </StyledSearchShowContainer>
     </StyledContainer>
   );
 };

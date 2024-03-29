@@ -6,15 +6,24 @@ import { DICTIONARY, LINKS } from '@/contants';
 import { Facebook, Instagram, Linkedin, Twitter } from '@/assets';
 import {
   StyledContainer,
+  StyledHideLinksContainer,
   StyledIconButtonsWrapper,
-  StyledLinksContainer,
   StyledMetadataSection,
+  StyledShowLinksContainer,
   StyledText,
 } from './styled';
 
 const MetadataSection: FC = () => {
   return (
     <StyledMetadataSection>
+      <StyledShowLinksContainer>
+        <StyledIconButtonsWrapper>
+          <IconButton img={Facebook} link={LINKS.FACEBOOK} />
+          <IconButton img={Twitter} link={LINKS.TWITTER} />
+          <IconButton img={Instagram} link={LINKS.INSTAGRAM} />
+          <IconButton img={Linkedin} link={LINKS.LINKEDIN} />
+        </StyledIconButtonsWrapper>
+      </StyledShowLinksContainer>
       <StyledContainer>
         <StyledText>{DICTIONARY.POLICY}</StyledText>
         <StyledText>{DICTIONARY.YOU_TUBE_WORKS}</StyledText>
@@ -25,14 +34,14 @@ const MetadataSection: FC = () => {
         <StyledText>{DICTIONARY.CONTACT_US}</StyledText>
         <StyledText>{DICTIONARY.ADVERTISE_DEVELOPERS}</StyledText>
       </StyledContainer>
-      <StyledLinksContainer>
+      <StyledHideLinksContainer>
         <StyledIconButtonsWrapper>
           <IconButton img={Facebook} link={LINKS.FACEBOOK} />
           <IconButton img={Twitter} link={LINKS.TWITTER} />
           <IconButton img={Instagram} link={LINKS.INSTAGRAM} />
           <IconButton img={Linkedin} link={LINKS.LINKEDIN} />
         </StyledIconButtonsWrapper>
-      </StyledLinksContainer>
+      </StyledHideLinksContainer>
     </StyledMetadataSection>
   );
 };
