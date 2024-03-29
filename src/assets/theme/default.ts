@@ -1,4 +1,8 @@
-export const DEFAULT_THEME = {
+const SIZES = {
+  sm: '780px',
+};
+
+const DEFAULT_THEME = {
   colors: {
     black: '#000',
     white: '#fff',
@@ -9,4 +13,9 @@ export const DEFAULT_THEME = {
     darkOrange: '#b76403',
     lightOrange: '#f7921c',
   },
+  breakpoints: {
+    sm: `(max-width: ${SIZES.sm})`,
+  },
 };
+
+export { DEFAULT_THEME, SIZES };
