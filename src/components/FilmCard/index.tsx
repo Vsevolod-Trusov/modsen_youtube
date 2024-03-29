@@ -12,14 +12,7 @@ import {
   StyledSubTitle,
   StyledTitle,
 } from './styled';
-
-interface IImage {
-  avatar: string;
-  preview: string;
-  author: string;
-  title: string;
-  createdAt: string;
-}
+import { IImage } from './types';
 
 const FilmCard: FC<IImage> = ({
   avatar,
