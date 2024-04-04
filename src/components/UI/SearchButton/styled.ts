@@ -8,7 +8,7 @@ const StyledButton = styled('div')(({ theme }) => ({
   height: '38px',
   padding: '5px 15px',
   border: `1px solid ${theme.colors.gray}`,
-  background: theme.colors.lightGray,
+  background: theme.colors.darkThemeWhite || theme.colors.lightGray,
 
   '&:hover': {
     border: `1px solid ${theme.colors.darkGray}`,

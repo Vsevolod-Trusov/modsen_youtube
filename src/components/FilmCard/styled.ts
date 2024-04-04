@@ -7,9 +7,12 @@ const StyledContainer = styled('div')(({ theme }) => ({
   maxWidth: '332px',
   padding: '20px 12px',
 
+  color: theme.colors.darkThemeWhite,
+
   '&:hover': {
     background: theme.colors.gray,
     transition: '.1s',
+    color: theme.colors.black,
   },
   '&:active': {
     background: theme.colors.darkGray,

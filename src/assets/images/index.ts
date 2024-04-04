@@ -1,4 +1,8 @@
 export { default as AvatarIcon } from './AvatarIcon.png';
+export { default as DarkFacebook } from './DarkFacebook.png';
+export { default as DarkInstagram } from './DarkInstagram.png';
+export { default as DarkLinkedin } from './DarkLinkedin.png';
+export { default as DarkTwitter } from './DarkTwitter.png';
 export { default as Facebook } from './Facebook.png';
 export { default as Instagram } from './Instagram.png';
 export { default as Linkedin } from './Linkedin.png';

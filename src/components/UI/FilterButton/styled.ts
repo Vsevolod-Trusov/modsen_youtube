@@ -19,7 +19,7 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
   },
   '&:active': {
     backgroundColor: theme.colors.black,
-    color: theme.colors.white,
+    color: theme.colors.darkThemeWhite || theme.colors.white,
     border: `2px solid ${theme.colors.black}`,
     transition: '.1s',
   },

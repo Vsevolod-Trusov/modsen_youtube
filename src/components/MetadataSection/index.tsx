@@ -2,8 +2,19 @@ import React, { FC } from 'react';
 
 import { IconButton } from '@/components';
 import { DICTIONARY, LINKS } from '@/contants';
+import { useTypedSelector } from '@/hooks';
+import { getCurrentThemeValue } from '@/store/slices';
 
-import { Facebook, Instagram, Linkedin, Twitter } from '@/assets';
+import {
+  DarkFacebook,
+  DarkInstagram,
+  DarkLinkedin,
+  DarkTwitter,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+} from '@/assets';
 import {
   StyledContainer,
   StyledHideLinksContainer,
@@ -14,6 +25,8 @@ import {
 } from './styled';
 
 const MetadataSection: FC = () => {
+  const currentTheme = useTypedSelector(getCurrentThemeValue);
+
   return (
     <StyledMetadataSection>
       <StyledShowLinksContainer>
@@ -36,10 +49,22 @@ const MetadataSection: FC = () => {
       </StyledContainer>
       <StyledHideLinksContainer>
         <StyledIconButtonsWrapper>
-          <IconButton img={Facebook} link={LINKS.FACEBOOK} />
-          <IconButton img={Twitter} link={LINKS.TWITTER} />
-          <IconButton img={Instagram} link={LINKS.INSTAGRAM} />
-          <IconButton img={Linkedin} link={LINKS.LINKEDIN} />
+          <IconButton
+            img={currentTheme ? Facebook : DarkFacebook}
+            link={LINKS.FACEBOOK}
+          />
+          <IconButton
+            img={currentTheme ? Twitter : DarkTwitter}
+            link={LINKS.TWITTER}
+          />
+          <IconButton
+            img={currentTheme ? Instagram : DarkInstagram}
+            link={LINKS.INSTAGRAM}
+          />
+          <IconButton
+            img={currentTheme ? Linkedin : DarkLinkedin}
+            link={LINKS.LINKEDIN}
+          />
         </StyledIconButtonsWrapper>
       </StyledHideLinksContainer>
     </StyledMetadataSection>

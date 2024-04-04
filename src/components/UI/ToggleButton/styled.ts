@@ -22,7 +22,7 @@ const StyledSpan = styled('span')(({ theme }) => ({
   left: 0,
   right: 0,
   bottom: 0,
-  backgroundColor: theme.colors.toggleButton || theme.colors.white,
+  backgroundColor: theme.colors.darkThemeBackground || theme.colors.white,
   borderRadius: '20px',
   border: `2px solid ${theme.colors.orange}`,
 
@@ -36,7 +36,7 @@ const StyledSpan = styled('span')(({ theme }) => ({
     borderRadius: '15px',
     zIndex: 2,
     border: `2px solid ${theme.colors.orange}`,
-    backgroundColor: theme.colors.toggleButton || theme.colors.white,
+    backgroundColor: theme.colors.darkThemeBackground || theme.colors.white,
     transition: '.2s',
   },
 }));

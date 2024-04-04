@@ -6,7 +6,7 @@ const StyledButton = styled('button')(({ theme }) => ({
   borderRadius: '10px',
   border: 'none',
   backgroundColor: theme.colors.orange,
-  color: theme.colors.white,
+  color: theme.colors.darkThemeWhite || theme.colors.white,
   fontFamily: 'Roboto',
   fontSize: '22px',
   fontWeight: '700',

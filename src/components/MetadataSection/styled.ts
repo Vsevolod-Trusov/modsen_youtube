@@ -32,6 +32,7 @@ const StyledMetadataSection = styled('div')(({ theme }) => ({
   display: 'flex',
   width: '100%',
   height: '100%',
+  color: theme.colors.darkThemeWhite || theme.colors.black,
 
   [`@media ${theme.breakpoints.sm}`]: {
     rowGap: '50px',
