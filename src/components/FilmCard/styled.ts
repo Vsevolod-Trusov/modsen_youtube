@@ -4,6 +4,7 @@ const StyledContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   flexBasis: '25%',
+  maxWidth: '332px',
   padding: '20px 12px',
 
   '&:hover': {
