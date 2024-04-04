@@ -1,9 +1,18 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
 
-import { StyledFooterContainer } from './styled';
+import { CompanySection, MetadataSection } from '@/components';
 
-const Footer: FC<PropsWithChildren> = ({ children }) => {
-  return <StyledFooterContainer>{children}</StyledFooterContainer>;
+import { StyledFooterContainer, StyledFooterWrapper } from './styled';
+
+const Footer: FC = () => {
+  return (
+    <StyledFooterContainer>
+      <StyledFooterWrapper>
+        <MetadataSection />
+        <CompanySection />
+      </StyledFooterWrapper>
+    </StyledFooterContainer>
+  );
 };
 
 export default Footer;

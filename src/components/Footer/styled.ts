@@ -13,4 +13,11 @@ const StyledFooterContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-export { StyledFooterContainer };
+const StyledFooterWrapper = styled('div')({
+  display: 'flex',
+  width: '100%',
+  height: '100%',
+  flexDirection: 'column',
+});
+
+export { StyledFooterContainer, StyledFooterWrapper };
