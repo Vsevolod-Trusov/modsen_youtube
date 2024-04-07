@@ -13,6 +13,7 @@ const DEFAULT_THEME = {
     darkOrange: '#b76403',
     lightOrange: '#f7921c',
   },
+  skeletonAnimationBackground: '240, 240, 240',
   breakpoints: {
     sm: `(max-width: ${SIZES.sm})`,
   },

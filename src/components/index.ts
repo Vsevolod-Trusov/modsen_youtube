@@ -10,4 +10,6 @@ export { default as Main } from './Main';
 export { default as MetadataSection } from './MetadataSection';
 export { default as SearchBar } from './SearchBar';
 export { default as SearchSection } from './SearchSection';
+export { default as SkeletonLoader } from './SkeletonLoader';
+export { default as SkeletonLoadersList } from './SkeletonLoadersList';
 export * from './UI';

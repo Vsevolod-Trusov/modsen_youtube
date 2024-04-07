@@ -12,6 +12,7 @@ const BLACK_THEME = {
     darkOrange: '#b76403',
     lightOrange: '#f7921c',
   },
+  skeletonAnimationBackground: '78, 78, 86',
   breakpoints: {
     sm: `(max-width: ${SIZES.sm})`,
   },

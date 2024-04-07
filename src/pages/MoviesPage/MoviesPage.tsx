@@ -1,6 +1,13 @@
 import React, { FC, useContext } from 'react';
 
-import { FilmsList, Footer, Header, Main } from '@/components';
+import {
+  FilmsList,
+  Footer,
+  Header,
+  Main,
+  SkeletonLoadersList,
+} from '@/components';
+import { DEFAULT_AMOUNT } from '@/contants';
 
 import { MoviesContext } from './context';
 import { StyledWrapper } from './styled';
@@ -142,7 +149,13 @@ const MoviesPage: FC = () => {
   return (
     <StyledWrapper>
       <Header />
-      <Main>{loading ? <h1>Loading </h1> : <FilmsList />}</Main>
+      <Main>
+        {loading ? (
+          <SkeletonLoadersList amount={DEFAULT_AMOUNT} />
+        ) : (
+          <FilmsList />
+        )}
+      </Main>
       <Footer />
     </StyledWrapper>
   );
