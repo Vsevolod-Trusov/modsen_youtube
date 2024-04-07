@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import getGlobalStyles from '@/assets';
-import { CustomThemeProvider } from '@/components';
+import { CustomThemeProvider, ErrorBoundary, FallbackUI } from '@/components';
 import { MoviesPage } from '@/pages';
 import { store } from '@/store';
 
@@ -16,8 +16,10 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <CustomThemeProvider>
-        <GlobalStyles />
-        <MoviesPage />
+        <ErrorBoundary fallBackUIComponent={<FallbackUI />}>
+          <GlobalStyles />
+          <MoviesPage />
+        </ErrorBoundary>
       </CustomThemeProvider>
     </Provider>
   </React.StrictMode>,
