@@ -1,3 +1,4 @@
+export { default as FallbackUI } from './FallbackUI';
 export { default as FilterButton } from './FilterButton';
 export { default as IconButton } from './IconButton';
 export { default as Image } from './Image';
