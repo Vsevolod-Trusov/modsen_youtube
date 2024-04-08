@@ -1,19 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
-import { Film } from '@/types';
-
+import { setfilms, setIsLoading } from '@/store/slices';
+import { useDispatch } from 'react-redux';
 import MoviesPage from './MoviesPage';
-import { MoviesContext } from './context';
 
 const MoviesPageContainer = () => {
   //const { data, error, isLoading } = useGetFilmsQuery('');
 
-  const [films, setFilms] = useState<Film[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setLoading(true);
-    setFilms([]);
     const controller = new AbortController();
     fetch('../../../data.json', {
       signal: controller.signal,
@@ -25,13 +21,13 @@ const MoviesPageContainer = () => {
         }
       })
       .then((data) => {
-        setFilms(data);
+        dispatch(setfilms(data));
       })
       .catch((e) => {
         if (e?.name === 'AbortError') return;
       })
       .finally(() => {
-        setLoading(false);
+        dispatch(setIsLoading(false));
       });
 
     return () => {
@@ -46,10 +42,6 @@ const MoviesPageContainer = () => {
   //   }
   // }, [data]);
 
-  return (
-    <MoviesContext.Provider value={{ loading, films }}>
-      <MoviesPage />
-    </MoviesContext.Provider>
-  );
+  return <MoviesPage />;
 };
 export default MoviesPageContainer;
