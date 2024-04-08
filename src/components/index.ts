@@ -5,6 +5,7 @@ export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as FilmCard } from './FilmCard';
 export { FilmsList } from './FilmsList';
 export { default as Footer } from './Footer';
+export { default as FrameSkeletonLoader } from './FrameSkeletonLoader';
 export { default as Header } from './Header';
 export { default as Logo } from './Logo';
 export { default as Main } from './Main';
