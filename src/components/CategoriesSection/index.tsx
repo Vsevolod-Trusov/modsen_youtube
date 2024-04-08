@@ -1,24 +1,16 @@
 import React, { FC } from 'react';
 
-import { FilterButton } from '../UI';
-import { StyledContainer, StyledWrapper } from './styled';
+import { FilterButton } from '@/components/UI';
+import { CATEGORIES } from '@/contants';
 
-const CATEGORIES = [
-  'All',
-  'action',
-  'drama',
-  'crime',
-  'romantic',
-  'horror',
-  'documentary',
-];
+import { StyledContainer, StyledWrapper } from './styled';
 
 const CategoriesSection: FC = () => {
   return (
     <StyledContainer>
       <StyledWrapper>
         {CATEGORIES.map((name) => (
-          <FilterButton key={crypto.randomUUID()}>{name}</FilterButton>
+          <FilterButton key={crypto.randomUUID()} name={name} />
         ))}
       </StyledWrapper>
     </StyledContainer>
