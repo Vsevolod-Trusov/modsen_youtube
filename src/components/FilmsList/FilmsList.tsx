@@ -17,9 +17,10 @@ const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
   <StyledFilmsContainer>
     {currentFilms.length ? (
       <>
-        {currentFilms.map(({ title, year, image }) => (
+        {currentFilms.map(({ title, year, image, id }) => (
           <FilmCard
             key={crypto.randomUUID()}
+            id={id}
             preview={image}
             avatar={AvatarIcon}
             title={title}
