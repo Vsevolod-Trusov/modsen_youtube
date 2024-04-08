@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const StyledButton = styled('div')(({ theme }) => ({
+const StyledButton = styled('button')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',

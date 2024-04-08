@@ -1,8 +1,10 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
 import { StyledButton } from './styled';
 
-const SearchButton: FC<PropsWithChildren> = ({ children }) => {
-  return <StyledButton>{children}</StyledButton>;
+const SearchButton: FC<
+  PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>
+> = ({ children, onClick: handler }) => {
+  return <StyledButton onClick={handler}>{children}</StyledButton>;
 };
 export default SearchButton;
