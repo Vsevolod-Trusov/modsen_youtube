@@ -2,12 +2,13 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
 import { videoApi } from './api';
-import { theme } from './slices';
+import { films, theme } from './slices';
 
 export const store = configureStore({
   reducer: {
     [videoApi.reducerPath]: videoApi.reducer,
     theme,
+    films,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(videoApi.middleware),
