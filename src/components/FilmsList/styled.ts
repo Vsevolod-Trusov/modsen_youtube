@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { StyledContainer } from '@/components/CompanySection/styled';
+
 const StyledFilmsContainer = styled('div')({
   display: 'flex',
   width: '100%',
@@ -18,4 +20,13 @@ const StyledScrollButtonContainer = styled('div')({
   padding: '35px 0px',
 });
 
-export { StyledFilmsContainer, StyledScrollButtonContainer };
+const StyledMockContainer = styled(StyledContainer)({
+  minHeight: '400px',
+  alignItems: 'center',
+});
+
+export {
+  StyledFilmsContainer,
+  StyledMockContainer,
+  StyledScrollButtonContainer,
+};
