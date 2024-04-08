@@ -3,7 +3,7 @@ export { default as CompanySection } from './CompanySection';
 export { default as CustomThemeProvider } from './CustomThemeProvider';
 export { default as ErrorBoundary } from './ErrorBoundary';
 export { default as FilmCard } from './FilmCard';
-export { default as FilmsList } from './FilmsList';
+export { FilmsList } from './FilmsList';
 export { default as Footer } from './Footer';
 export { default as Header } from './Header';
 export { default as Logo } from './Logo';
