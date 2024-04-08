@@ -4,6 +4,7 @@ interface IImage {
   author: string;
   title: string;
   createdAt: string;
+  id: string;
 }
 
 export { IImage };

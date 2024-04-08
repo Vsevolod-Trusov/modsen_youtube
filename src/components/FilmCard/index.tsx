@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { Image } from '@/components';
 
-import { setIsPlayerOpened } from '@/store/slices';
+import { setIsPlayerOpened, setSelectedFilmId } from '@/store/slices';
 import { useDispatch } from 'react-redux';
 import {
   StyledAuthorSection,
@@ -22,11 +22,13 @@ const FilmCard: FC<IImage> = ({
   title,
   author,
   createdAt,
+  id,
 }) => {
   const dispatch = useDispatch();
 
   const handleOpenPlayer = () => {
     dispatch(setIsPlayerOpened(true));
+    dispatch(setSelectedFilmId(id));
   };
 
   return (
