@@ -4,7 +4,9 @@ import { StyledInput } from './styled';
 
 const SearchInput: FC<
   PropsWithChildren<InputHTMLAttributes<HTMLInputElement>>
-> = ({ placeholder }) => {
-  return <StyledInput placeholder={placeholder} />;
+> = ({ placeholder, value, onChange: handler }) => {
+  return (
+    <StyledInput placeholder={placeholder} value={value} onChange={handler} />
+  );
 };
 export default SearchInput;
