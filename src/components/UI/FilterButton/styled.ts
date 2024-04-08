@@ -25,4 +25,25 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
   },
 }));
 
-export { StyledFilterButton };
+const StyledSelectedCategoryButton = styled(StyledFilterButton)(
+  ({ theme }) => ({
+    backgroundColor: theme.colors.black,
+    color: theme.colors.darkThemeWhite || theme.colors.white,
+    border: `2px solid ${theme.colors.black}`,
+
+    '&:hover': {
+      border: `2px solid ${theme.colors.gray}`,
+      color: theme.colors.black,
+      transition: '.1s',
+    },
+
+    '&:active': {
+      backgroundColor: theme.colors.black,
+      color: theme.colors.darkThemeWhite || theme.colors.white,
+      border: `2px solid ${theme.colors.black}`,
+      transition: '.1s',
+    },
+  }),
+);
+
+export { StyledFilterButton, StyledSelectedCategoryButton };

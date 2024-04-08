@@ -1,8 +1,31 @@
-import React, { FC, PropsWithChildren } from 'react';
+import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 
-import { StyledFilterButton } from './styled';
+import { useTypedSelector } from '@/hooks';
+import { getCategory, setCategory } from '@/store/slices';
+import { IFilterButton } from '@/types';
 
-const Button: FC<PropsWithChildren> = ({ children }) => {
-  return <StyledFilterButton>{children}</StyledFilterButton>;
+import { StyledFilterButton, StyledSelectedCategoryButton } from './styled';
+
+const FilterButton: FC<IFilterButton> = ({ name }) => {
+  const dispatch = useDispatch();
+
+  const selectedCategory = useTypedSelector(getCategory);
+
+  const handleSelectingCategory = () => {
+    dispatch(setCategory(name));
+  };
+
+  return (
+    <>
+      {selectedCategory === name ? (
+        <StyledSelectedCategoryButton>{name}</StyledSelectedCategoryButton>
+      ) : (
+        <StyledFilterButton onClick={handleSelectingCategory}>
+          {name}
+        </StyledFilterButton>
+      )}
+    </>
+  );
 };
-export default Button;
+export default FilterButton;
