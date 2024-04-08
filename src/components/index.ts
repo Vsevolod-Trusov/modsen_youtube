@@ -9,6 +9,7 @@ export { default as Header } from './Header';
 export { default as Logo } from './Logo';
 export { default as Main } from './Main';
 export { default as MetadataSection } from './MetadataSection';
+export { default as PopupPlayer } from './PopupPlayer';
 export { default as SearchBar } from './SearchBar';
 export { default as SearchSection } from './SearchSection';
 export { default as SkeletonLoader } from './SkeletonLoader';

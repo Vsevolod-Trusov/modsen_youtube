@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 
 import { AvatarIcon } from '@/assets';
+import { PopupPlayer } from '@/components';
 import FilmCard from '@/components/FilmCard';
 import { ShowMoreButton } from '@/components/UI';
 import { AUTHOR_NAME, DICTIONARY, NO_SUCH_FILMS } from '@/contants';
@@ -37,6 +38,7 @@ const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
         <div>{NO_SUCH_FILMS}</div>
       </StyledMockContainer>
     )}
+    <PopupPlayer />
   </StyledFilmsContainer>
 );
 

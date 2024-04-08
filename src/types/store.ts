@@ -4,9 +4,10 @@ export interface ITheme {
   current: boolean;
 }
 
-export interface IFilter {
+export interface IFilmStore {
   films: Film[];
   isLoading: boolean;
   category: string;
   searchValue: string;
+  isPlayerOpened: boolean;
 }

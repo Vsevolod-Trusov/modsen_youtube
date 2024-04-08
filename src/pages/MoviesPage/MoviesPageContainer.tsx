@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import { setfilms, setIsLoading } from '@/store/slices';
+import { setFilms, setIsLoading } from '@/store/slices';
 import { useDispatch } from 'react-redux';
 import MoviesPage from './MoviesPage';
 
@@ -21,7 +21,7 @@ const MoviesPageContainer = () => {
         }
       })
       .then((data) => {
-        dispatch(setfilms(data));
+        dispatch(setFilms(data));
       })
       .catch((e) => {
         if (e?.name === 'AbortError') return;

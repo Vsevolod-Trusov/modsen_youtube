@@ -2,6 +2,8 @@ import React, { FC } from 'react';
 
 import { Image } from '@/components';
 
+import { setIsPlayerOpened } from '@/store/slices';
+import { useDispatch } from 'react-redux';
 import {
   StyledAuthorSection,
   StyledAvatar,
@@ -21,8 +23,14 @@ const FilmCard: FC<IImage> = ({
   author,
   createdAt,
 }) => {
+  const dispatch = useDispatch();
+
+  const handleOpenPlayer = () => {
+    dispatch(setIsPlayerOpened(true));
+  };
+
   return (
-    <StyledContainer>
+    <StyledContainer onClick={handleOpenPlayer}>
       <StyledPreviewSection>
         <Image src={preview} alt={'img'} />
       </StyledPreviewSection>

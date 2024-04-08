@@ -2,13 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { EMPTY_STRING, SLICE_NAMES } from '@/contants';
 import { RootState } from '@/store';
-import { IFilter } from '@/types';
+import { IFilmStore } from '@/types';
 
-const initials: IFilter = {
+const initials: IFilmStore = {
   films: [],
   isLoading: true,
   category: EMPTY_STRING,
   searchValue: EMPTY_STRING,
+  isPlayerOpened: false,
 };
 
 const films = createSlice({
@@ -18,7 +19,7 @@ const films = createSlice({
     setCategory: (state, { payload }) => {
       return { ...state, category: payload };
     },
-    setfilms: (state, { payload }) => {
+    setFilms: (state, { payload }) => {
       return { ...state, films: payload };
     },
     setSearchValue: (state, { payload }) => {
@@ -27,15 +28,25 @@ const films = createSlice({
     setIsLoading: (state, { payload }) => {
       return { ...state, isLoading: payload };
     },
+    setIsPlayerOpened: (state, { payload }) => {
+      return { ...state, isPlayerOpened: payload };
+    },
   },
 });
 
-export const { setCategory, setfilms, setIsLoading, setSearchValue } =
-  films.actions;
+export const {
+  setCategory,
+  setFilms,
+  setIsLoading,
+  setSearchValue,
+  setIsPlayerOpened,
+} = films.actions;
 
 export const getCategory = (state: RootState) => state.films.category;
 export const getFilms = (state: RootState) => state.films.films;
 export const getIsLoading = (state: RootState) => state.films.isLoading;
 export const getSearchValue = (state: RootState) => state.films.searchValue;
+export const getIsPlayerOpened = (state: RootState) =>
+  state.films.isPlayerOpened;
 
 export default films.reducer;
