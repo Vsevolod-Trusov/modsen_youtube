@@ -6,4 +6,5 @@ export type Film = {
   title: string;
   image: string;
   year: number;
+  genre: Array<string>;
 };

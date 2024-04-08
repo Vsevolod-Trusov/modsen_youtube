@@ -5,6 +5,11 @@ export interface IMoviesPage {
   loading: boolean;
 }
 
+export interface IFilmsList {
+  currentFilms: Film[];
+  handleGetMore: () => void;
+}
+
 export interface ISkeletonLoadersList {
   amount: number;
 }
