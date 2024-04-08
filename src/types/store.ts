@@ -9,5 +9,6 @@ export interface IFilmStore {
   isLoading: boolean;
   category: string;
   searchValue: string;
+  filmId: string;
   isPlayerOpened: boolean;
 }

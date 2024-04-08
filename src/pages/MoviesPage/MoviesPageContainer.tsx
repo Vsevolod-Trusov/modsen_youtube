@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { setFilms, setIsLoading } from '@/store/slices';
-import { useDispatch } from 'react-redux';
+
 import MoviesPage from './MoviesPage';
 
 const MoviesPageContainer = () => {

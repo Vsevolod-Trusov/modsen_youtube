@@ -9,6 +9,7 @@ const initials: IFilmStore = {
   isLoading: true,
   category: EMPTY_STRING,
   searchValue: EMPTY_STRING,
+  filmId: EMPTY_STRING,
   isPlayerOpened: false,
 };
 
@@ -31,6 +32,9 @@ const films = createSlice({
     setIsPlayerOpened: (state, { payload }) => {
       return { ...state, isPlayerOpened: payload };
     },
+    setSelectedFilmId: (state, { payload }) => {
+      return { ...state, filmId: payload };
+    },
   },
 });
 
@@ -40,12 +44,14 @@ export const {
   setIsLoading,
   setSearchValue,
   setIsPlayerOpened,
+  setSelectedFilmId,
 } = films.actions;
 
 export const getCategory = (state: RootState) => state.films.category;
 export const getFilms = (state: RootState) => state.films.films;
 export const getIsLoading = (state: RootState) => state.films.isLoading;
 export const getSearchValue = (state: RootState) => state.films.searchValue;
+export const getSelectedFilmId = (state: RootState) => state.films.filmId;
 export const getIsPlayerOpened = (state: RootState) =>
   state.films.isPlayerOpened;
 

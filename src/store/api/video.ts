@@ -1,6 +1,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IMDB_URLBASE, METHODS, REDUCERS_PATH, URLS } from '@/contants';
+import {
+  IMDB_HEADERS,
+  IMDB_URLBASE,
+  METHODS,
+  REDUCERS_PATH,
+  URLS,
+} from '@/contants';
 import type { Film } from '@/types';
 
 export const videoApi = createApi({
@@ -10,17 +16,34 @@ export const videoApi = createApi({
   }),
   endpoints: (builder) => ({
     getFilms: builder.query<Film[], string>({
-      query: () => ({
-        url: URLS.BASE,
-        method: METHODS.GET,
-        headers: {
-          'X-RapidAPI-Key':
-            '8c9bdafd38msh548845b52cae500p1e2390jsn8eb226836660',
-          'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
-        },
-      }),
+      query: () => {
+        const controller = new AbortController();
+
+        return {
+          url: URLS.BASE,
+          method: METHODS.GET,
+          headers: IMDB_HEADERS,
+          signal: controller.signal,
+        };
+      },
+    }),
+    getFilmById: builder.query<Film, string>({
+      query: (id: string) => {
+        const controller = new AbortController();
+
+        return {
+          url: `/${id}`,
+          method: METHODS.GET,
+          headers: IMDB_HEADERS,
+          signal: controller.signal,
+        };
+      },
     }),
   }),
 });
 
-export const { useGetFilmsQuery } = videoApi;
+export const {
+  useGetFilmsQuery,
+  useGetFilmByIdQuery,
+  useLazyGetFilmByIdQuery,
+} = videoApi;
