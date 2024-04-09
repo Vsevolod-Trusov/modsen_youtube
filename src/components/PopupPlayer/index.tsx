@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { FrameSkeletonLoader } from '@/components';
 import { useTypedSelector } from '@/hooks';
+import { useGetFilmByIdQuery } from '@/store/api';
 import {
   getIsPlayerOpened,
   getSelectedFilmId,
@@ -20,10 +21,9 @@ import {
 
 const PopupPlayer: FC = () => {
   const selectedFilmId = useTypedSelector(getSelectedFilmId);
-  // const { data, isLoading } = useGetFilmByIdQuery(selectedFilmId);
+  const { data, isLoading } = useGetFilmByIdQuery(selectedFilmId);
 
   const [film, setFilm] = useState<Film>({} as Film);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   const isPlayerOpened = useTypedSelector(getIsPlayerOpened);
   const dispatch = useDispatch();
@@ -33,36 +33,10 @@ const PopupPlayer: FC = () => {
   };
 
   useEffect(() => {
-    setIsLoading(true);
-    setFilm({} as Film);
-    const controller = new AbortController();
-    fetch('../../../film.json', {
-      signal: controller.signal,
-    })
-      .then((res) => {
-        if (res.status === 200) return res.json();
-        else {
-          return Promise.reject(res);
-        }
-      })
-      .then((data) => {
-        setFilm(data);
-      })
-      .catch((e) => {
-        if (e?.name === 'AbortError') return;
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-
-    return () => {
-      controller.abort();
-    };
-  }, []);
-
-  // useEffect(() => {
-  //   localStorage.setItem('film', JSON.stringify(data));
-  // }, [data]);
+    if (data) {
+      setFilm(data);
+    }
+  }, [data]);
 
   return (
     <>
