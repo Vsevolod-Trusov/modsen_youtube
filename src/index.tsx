@@ -24,3 +24,8 @@ root.render(
     </Provider>
   </React.StrictMode>,
 );
+
+if (window.Cypress) {
+  // @ts-ignore
+  window.store = store;
+}

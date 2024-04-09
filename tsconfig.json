@@ -12,6 +12,7 @@
     "module": "commonjs",
     "target": "es5",
     "strict": true,
+    "types": ["cypress"],
     "jsx": "react"
   },
   "include": ["./src/**/*", "declarations.d.ts"]
