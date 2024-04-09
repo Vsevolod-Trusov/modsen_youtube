@@ -1,6 +1,7 @@
 const enum SLICE_NAMES {
   THEME = 'theme',
   FILMS = 'films',
+  ELASTIC = 'elastic',
 }
 
 const enum REDUCERS_PATH {

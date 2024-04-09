@@ -1,7 +1,7 @@
-import { ALL_CATEGORY } from '@/contants';
+import { ALL_CATEGORY, EMPTY_STRING } from '@/contants';
 import { Film } from '@/types';
 
-export const getFilteresList = (
+export const getFilteredList = (
   films: Film[],
   category: string,
   searchValue: string,
@@ -26,4 +26,18 @@ export const getFilteresList = (
   }
 
   return data;
+};
+
+export const getKey = (searchValue: string, category: string) => {
+  let key = EMPTY_STRING;
+
+  if (searchValue) {
+    key += searchValue;
+  }
+
+  if (category) {
+    key += category;
+  }
+
+  return key.toLowerCase();
 };
