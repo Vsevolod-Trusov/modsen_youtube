@@ -3,6 +3,7 @@ const SIZES = {
 };
 
 const DEFAULT_THEME = {
+  hoverAnimationDuration: '0.3s',
   colors: {
     black: '#000',
     white: '#fff',

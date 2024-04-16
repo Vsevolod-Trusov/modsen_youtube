@@ -14,7 +14,9 @@ const StyledButton = styled('button')(({ theme }) => ({
   textAlign: 'center',
 
   '&:hover': {
+    cursor: 'pointer',
     backgroundColor: theme.colors.darkOrange,
+    animation: `hover_scroll_animation ${theme.hoverAnimationDuration} linear`,
     transition: '.1s',
   },
 

@@ -15,7 +15,8 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
 
   '&:hover': {
     backgroundColor: theme.colors.gray,
-    transition: '.1s',
+    cursor: 'pointer',
+    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
   },
   '&:active': {
     backgroundColor: theme.colors.black,
@@ -34,7 +35,7 @@ const StyledSelectedCategoryButton = styled(StyledFilterButton)(
     '&:hover': {
       border: `2px solid ${theme.colors.gray}`,
       color: theme.colors.black,
-      transition: '.1s',
+      animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
     },
 
     '&:active': {

@@ -18,6 +18,23 @@ const getGlobalStyles = () => createGlobalStyle`
          transform: translateX(100%);
       }
    }
+
+   @keyframes hover_item_animation {
+   0% {
+      background-color: ${(props) => props.theme.colors.darkThemeWhite || props.theme.colors.lightGray};
+   }
+   100% {
+      background-color: ${(props) => props.theme.colors.gray};
+   }
+
+   @keyframes hover_scroll_animation {
+      0% {
+         background-color: ${(props) => props.theme.colors.orange};
+      }
+      100% {
+         background-color: ${(props) => props.theme.colors.darkOrange};
+      }
+}
    `;
 
 export default getGlobalStyles;

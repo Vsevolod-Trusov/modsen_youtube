@@ -1,6 +1,7 @@
 import { SIZES } from './default';
 
 const BLACK_THEME = {
+  hoverAnimationDuration: '0.3s',
   colors: {
     black: '#000',
     darkThemeWhite: '#fff',

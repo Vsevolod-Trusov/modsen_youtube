@@ -9,6 +9,10 @@ const StyledContainer = styled('div')(({ theme }) => ({
   columnGap: '5px',
 
   color: theme.colors.darkThemeWhite || theme.colors.black,
+
+  '&:hover': {
+    cursor: 'pointer',
+  },
 }));
 
 const StyledImageWrapper = styled('div')({

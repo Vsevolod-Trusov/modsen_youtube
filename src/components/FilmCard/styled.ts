@@ -11,8 +11,10 @@ const StyledContainer = styled('div')(({ theme }) => ({
 
   '&:hover': {
     background: theme.colors.gray,
-    transition: '.1s',
+    cursor: 'pointer',
     color: theme.colors.black,
+    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+    transition: '.5s',
   },
   '&:active': {
     background: theme.colors.darkGray,

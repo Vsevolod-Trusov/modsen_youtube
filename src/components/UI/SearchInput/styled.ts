@@ -15,7 +15,7 @@ const StyledInput = styled('input')(({ theme }) => ({
   '&:hover': {
     border: `1px solid ${theme.colors.darkGray}`,
     background: theme.colors.gray,
-    transition: '.1s',
+    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
   },
   '&:focus': {
     background: theme.colors.white,

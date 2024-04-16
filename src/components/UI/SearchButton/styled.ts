@@ -13,7 +13,8 @@ const StyledButton = styled('button')(({ theme }) => ({
   '&:hover': {
     border: `1px solid ${theme.colors.darkGray}`,
     background: theme.colors.gray,
-    transition: '.1s',
+    cursor: 'pointer',
+    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
   },
   '&:active': {
     border: `1px solid ${theme.colors.black}`,
