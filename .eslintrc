@@ -17,10 +17,13 @@
     "ecmaVersion": 2022,
     "sourceType": "module",
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint", "prettier", "simple-import-sort"],
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-explicit-any": "error",
+    // Если вы хотите сгруппировать импорты, используйте ниже.
+    "simple-import-sort/imports": "error",
+    "simple-import-sort/exports": "error",
   },
   "settings": {
     "react": {
