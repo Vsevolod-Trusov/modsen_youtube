@@ -1,8 +1,8 @@
 import { MOCKED_FILM, TEST_IDS } from '../../src/contants';
 
 it('get info abount one film. Compare info about it', () => {
-  cy.visit('http://localhost:3000');
-  cy.intercept('GET', '/data.json', {
+  cy.visit('https://vsevolod-trusov.github.io/modsen_youtube/');
+  cy.intercept('GET', 'https://imdb-top-100-movies.p.rapidapi.com/', {
     fixture: '../fixtures/mocked.json',
   }).as('apiCheck');
   cy.wait('@apiCheck');
