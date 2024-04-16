@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { TEST_IDS } from '@/contants';
+import { LOCALSTORAGE_NAMES, TEST_IDS } from '@/contants';
 import { useTypedSelector } from '@/hooks';
 import { getCurrentThemeValue, toggleTheme } from '@/store/slices';
 
@@ -17,13 +17,22 @@ const ToggleButton: FC = () => {
   const currentTheme = useTypedSelector(getCurrentThemeValue);
 
   const handleToggle = () => {
+    localStorage.setItem(
+      LOCALSTORAGE_NAMES.THEME,
+      JSON.stringify({ current: !currentTheme }),
+    );
     dispatch(toggleTheme(!currentTheme));
   };
 
   return (
     <StyledToggleContainer test-id={TEST_IDS.TOGGLE_THEME_BUTTON_ID}>
       <StyledLabel>
-        <StyledInput type='checkbox' className='input' onClick={handleToggle} />
+        <StyledInput
+          type='checkbox'
+          checked={currentTheme}
+          className='input'
+          onClick={handleToggle}
+        />
         <StyledSpan className='slider' />
       </StyledLabel>
     </StyledToggleContainer>

@@ -1,11 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { SLICE_NAMES } from '@/contants';
+import { DEFAULT_THEME, LOCALSTORAGE_NAMES, SLICE_NAMES } from '@/contants';
 import { RootState } from '@/store';
 import { ITheme } from '@/types';
 
 const initials: ITheme = {
-  current: true,
+  current: JSON.parse(
+    localStorage.getItem(LOCALSTORAGE_NAMES.THEME) || DEFAULT_THEME,
+  )?.current,
 };
 
 const theme = createSlice({

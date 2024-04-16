@@ -1,3 +1,7 @@
+const DEFAULT_THEME = JSON.stringify({ current: false });
+enum LOCALSTORAGE_NAMES {
+  THEME = 'theme',
+}
 const enum SLICE_NAMES {
   THEME = 'theme',
   FILMS = 'films',
@@ -8,4 +12,4 @@ const enum REDUCERS_PATH {
   VIDEO = 'videoApi',
 }
 
-export { REDUCERS_PATH, SLICE_NAMES };
+export { DEFAULT_THEME, LOCALSTORAGE_NAMES, REDUCERS_PATH, SLICE_NAMES };
