@@ -10,11 +10,7 @@ const CategoriesSection: FC = () => {
     <StyledContainer>
       <StyledWrapper>
         {CATEGORIES.map((name) => (
-          <FilterButton
-            key={crypto.randomUUID()}
-            name={name}
-            testId={TEST_IDS.CATEGORY_ID}
-          />
+          <FilterButton key={name} name={name} testId={TEST_IDS.CATEGORY_ID} />
         ))}
       </StyledWrapper>
     </StyledContainer>

@@ -19,7 +19,7 @@ const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
       <>
         {currentFilms.map(({ title, year, image, id }) => (
           <FilmCard
-            key={crypto.randomUUID()}
+            key={id}
             id={id}
             preview={image}
             avatar={AvatarIcon}

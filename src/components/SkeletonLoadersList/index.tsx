@@ -11,8 +11,8 @@ const SkeletonLoadersList: FC<ISkeletonLoadersList> = ({ amount }) => {
 
   return (
     <StyledFilmsContainer>
-      {loaders.map(() => (
-        <SkeletonLoader key={crypto.randomUUID()} />
+      {loaders.map((item, index) => (
+        <SkeletonLoader key={index} />
       ))}
     </StyledFilmsContainer>
   );
