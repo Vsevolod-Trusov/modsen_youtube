@@ -1,6 +1,6 @@
+import { TEST_IDS } from '../../src/contants';
+
 it('input in search field and search films', () => {
   cy.visit('http://localhost:3000');
-  cy.get(
-    '#root > div > div.sc-egTsrv.kVigRO > div > div[class="sc-eDLKkx bdWGNr"]',
-  ).should('have.length', 16);
+  cy.get(`[test-id="${TEST_IDS.FILM_ITEM_ID}"]`).should('have.length', 16);
 });

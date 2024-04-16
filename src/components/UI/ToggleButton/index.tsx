@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-
 import { useDispatch } from 'react-redux';
 
+import { TEST_IDS } from '@/contants';
 import { useTypedSelector } from '@/hooks';
 import { getCurrentThemeValue, toggleTheme } from '@/store/slices';
 
@@ -21,7 +21,7 @@ const ToggleButton: FC = () => {
   };
 
   return (
-    <StyledToggleContainer>
+    <StyledToggleContainer test-id={TEST_IDS.TOGGLE_THEME_BUTTON_ID}>
       <StyledLabel>
         <StyledInput type='checkbox' className='input' onClick={handleToggle} />
         <StyledSpan className='slider' />

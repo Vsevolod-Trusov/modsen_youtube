@@ -7,7 +7,7 @@ import { IFilterButton } from '@/types';
 
 import { StyledFilterButton, StyledSelectedCategoryButton } from './styled';
 
-const FilterButton: FC<IFilterButton> = ({ name }) => {
+const FilterButton: FC<IFilterButton> = ({ name, testId }) => {
   const dispatch = useDispatch();
 
   const selectedCategory = useTypedSelector(getCategory);
@@ -19,9 +19,11 @@ const FilterButton: FC<IFilterButton> = ({ name }) => {
   return (
     <>
       {selectedCategory === name ? (
-        <StyledSelectedCategoryButton>{name}</StyledSelectedCategoryButton>
+        <StyledSelectedCategoryButton test-id={testId}>
+          {name}
+        </StyledSelectedCategoryButton>
       ) : (
-        <StyledFilterButton onClick={handleSelectingCategory}>
+        <StyledFilterButton onClick={handleSelectingCategory} test-id={testId}>
           {name}
         </StyledFilterButton>
       )}

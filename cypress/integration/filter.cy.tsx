@@ -1,12 +1,8 @@
+import { TEST_IDS } from '../../src/contants';
+
 it('input in search field and search films', () => {
   cy.visit('http://localhost:3000');
-  cy.get(
-    '#root > div > div.sc-ckdEwu.gHLEoN > div > div.sc-ppzwM.gWhySw > div.sc-hiTDLB.sc-ejCKsa.hEdcYG.ipIfxf > div > input',
-  );
-  cy.get(
-    '#root > div > div.sc-ckdEwu.gHLEoN > div > div.sc-ppzwM.gWhySw > div.sc-hiTDLB.sc-ejCKsa.hEdcYG.ipIfxf > div > button',
-  ).click();
-  cy.get(
-    '#root > div > div.sc-egTsrv.kVigRO > div > div[class="sc-eDLKkx bdWGNr"]',
-  ).should('have.length', 5);
+  cy.get(`[test-id="${TEST_IDS.SEARCH_INPUT_ID}"]`).eq(0).type('as');
+  cy.get(`[test-id="${TEST_IDS.SEARCH_BUTTON_ID}"]`).eq(0).click();
+  cy.get(`[test-id="${TEST_IDS.FILM_ITEM_ID}"]`).should('have.length', 5);
 });

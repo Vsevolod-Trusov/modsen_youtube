@@ -33,7 +33,7 @@ const FilmCard: FC<IImage> = ({
   };
 
   return (
-    <StyledContainer onClick={handleOpenPlayer} test-id={id}>
+    <StyledContainer onClick={handleOpenPlayer} test-id={TEST_IDS.FILM_ITEM_ID}>
       <StyledPreviewSection>
         <Image src={preview} alt={'img'} testId={TEST_IDS.IMAGE_ID} />
       </StyledPreviewSection>
