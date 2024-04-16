@@ -4,6 +4,8 @@ export const enum METHODS {
 }
 export const enum URLS {
   BASE = '/',
+  MOCKED_FILMS_DATA = 'data.json',
+  MOCKED_FILM_DATA = 'film.json',
 }
 
 export const IMDB_HEADERS = {
