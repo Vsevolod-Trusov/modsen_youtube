@@ -1,9 +1,10 @@
 import React, { FC } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { Image } from '@/components';
-
+import { TEST_IDS } from '@/contants';
 import { setIsPlayerOpened, setSelectedFilmId } from '@/store/slices';
-import { useDispatch } from 'react-redux';
+
 import {
   StyledAuthorSection,
   StyledAvatar,
@@ -32,20 +33,24 @@ const FilmCard: FC<IImage> = ({
   };
 
   return (
-    <StyledContainer onClick={handleOpenPlayer}>
+    <StyledContainer onClick={handleOpenPlayer} test-id={id}>
       <StyledPreviewSection>
-        <Image src={preview} alt={'img'} />
+        <Image src={preview} alt={'img'} testId={TEST_IDS.IMAGE_ID} />
       </StyledPreviewSection>
       <StyledDescriptionSection>
         <StyledAvatarContainer>
           <StyledAvatar src={avatar} alt={'img'} />
         </StyledAvatarContainer>
         <StyledAuthorSection>
-          <StyledTitle>{title}</StyledTitle>
+          <StyledTitle test-id={TEST_IDS.TITLE_ID}>{title}</StyledTitle>
           <div>
-            <StyledSubTitle>{author}</StyledSubTitle>
+            <StyledSubTitle test-id={TEST_IDS.AUTHOR_ID}>
+              {author}
+            </StyledSubTitle>
             <StyledSubTitle>&#8226;</StyledSubTitle>
-            <StyledSubTitle>{createdAt}</StyledSubTitle>
+            <StyledSubTitle test-id={TEST_IDS.YEAR_ID}>
+              {createdAt}
+            </StyledSubTitle>
           </div>
         </StyledAuthorSection>
       </StyledDescriptionSection>
