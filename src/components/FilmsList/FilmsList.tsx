@@ -1,8 +1,7 @@
 import React, { FC } from 'react';
 
 import { AvatarIcon } from '@/assets';
-import { PopupPlayer } from '@/components';
-import FilmCard from '@/components/FilmCard';
+import { FilmCard, PopupPlayer } from '@/components';
 import { ShowMoreButton } from '@/components/UI';
 import { AUTHOR_NAME, DICTIONARY, NO_SUCH_FILMS } from '@/contants';
 import { IFilmsList } from '@/types';
@@ -43,4 +42,4 @@ const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
   </StyledFilmsContainer>
 );
 
-export default FilmsList;
+export { FilmsList };

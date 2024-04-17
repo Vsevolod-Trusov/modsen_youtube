@@ -21,4 +21,4 @@ const SkeletonLoader: FC = () => {
     </StyledLoader>
   );
 };
-export default SkeletonLoader;
+export { SkeletonLoader };

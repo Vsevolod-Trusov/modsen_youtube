@@ -18,4 +18,4 @@ const SkeletonLoadersList: FC<ISkeletonLoadersList> = ({ amount }) => {
     </StyledFilmsContainer>
   );
 };
-export default SkeletonLoadersList;
+export { SkeletonLoadersList };

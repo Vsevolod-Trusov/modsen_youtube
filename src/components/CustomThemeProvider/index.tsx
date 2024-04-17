@@ -14,4 +14,4 @@ const CustomThemeProvider: FC<PropsWithChildren> = ({ children }) => {
     </ThemeProvider>
   );
 };
-export default CustomThemeProvider;
+export { CustomThemeProvider };

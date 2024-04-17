@@ -15,4 +15,4 @@ const SearchInput: FC<
   />
 );
 
-export default SearchInput;
+export { SearchInput };

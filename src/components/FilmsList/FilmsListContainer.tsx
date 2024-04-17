@@ -16,7 +16,7 @@ import {
 import { Film } from '@/types';
 import { getFilteredList } from '@/utils';
 
-import FilmsList from './FilmsList';
+import { FilmsList } from './FilmsList';
 
 const FilmsListContainer: FC = () => {
   const films = useTypedSelector(getFilms);

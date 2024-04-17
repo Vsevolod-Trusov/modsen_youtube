@@ -5,4 +5,4 @@ import { StyledMainContainer } from './styled';
 const Main: FC<PropsWithChildren> = ({ children }) => (
   <StyledMainContainer>{children}</StyledMainContainer>
 );
-export default Main;
+export { Main };

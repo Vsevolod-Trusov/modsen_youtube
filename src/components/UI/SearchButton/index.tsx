@@ -12,4 +12,4 @@ const SearchButton: FC<
   </StyledButton>
 );
 
-export default SearchButton;
+export { SearchButton };

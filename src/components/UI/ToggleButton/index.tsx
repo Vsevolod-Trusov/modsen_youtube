@@ -38,4 +38,4 @@ const ToggleButton: FC = () => {
     </StyledToggleContainer>
   );
 };
-export default ToggleButton;
+export { ToggleButton };

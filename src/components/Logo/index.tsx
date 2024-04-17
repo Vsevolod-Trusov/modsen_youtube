@@ -16,4 +16,4 @@ const Logo: FC<ILogo> = ({ title }) => {
     </StyledContainer>
   );
 };
-export default Logo;
+export { Logo };

@@ -36,4 +36,4 @@ const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
   );
 };
 
-export default SearchBar;
+export { SearchBar };

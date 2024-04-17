@@ -1,10 +1,5 @@
 import React, { FC } from 'react';
 
-import { IconButton } from '@/components';
-import { DICTIONARY, LINKS } from '@/contants';
-import { useTypedSelector } from '@/hooks';
-import { getCurrentThemeValue } from '@/store/slices';
-
 import {
   DarkFacebook,
   DarkInstagram,
@@ -15,6 +10,11 @@ import {
   Linkedin,
   Twitter,
 } from '@/assets';
+import { IconButton } from '@/components';
+import { DICTIONARY, LINKS } from '@/contants';
+import { useTypedSelector } from '@/hooks';
+import { getCurrentThemeValue } from '@/store/slices';
+
 import {
   StyledContainer,
   StyledHideLinksContainer,
@@ -70,4 +70,4 @@ const MetadataSection: FC = () => {
     </StyledMetadataSection>
   );
 };
-export default MetadataSection;
+export { MetadataSection };

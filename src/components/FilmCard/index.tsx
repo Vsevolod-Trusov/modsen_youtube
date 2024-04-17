@@ -60,4 +60,4 @@ const FilmCard: FC<IImage> = ({
     </StyledContainer>
   );
 };
-export default FilmCard;
+export { FilmCard };

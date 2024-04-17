@@ -10,4 +10,4 @@ const Image: FC<IImage> = ({ src, alt, testId }) => {
   return <StyledImage src={src} alt={alt} data-test-id={testId} />;
 };
 
-export default Image;
+export { Image };

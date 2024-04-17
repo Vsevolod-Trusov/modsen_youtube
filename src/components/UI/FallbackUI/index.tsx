@@ -15,4 +15,4 @@ const FallbackUI: FC = () => {
     </StyledContainer>
   );
 };
-export default FallbackUI;
+export { FallbackUI };

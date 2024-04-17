@@ -7,4 +7,4 @@ const ScrollButton: FC<
 > = ({ children, onClick: handler }) => (
   <StyledButton onClick={handler}>{children}</StyledButton>
 );
-export default ScrollButton;
+export { ScrollButton };

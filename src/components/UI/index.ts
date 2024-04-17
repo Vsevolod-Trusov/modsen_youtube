@@ -1,9 +1,9 @@
-export { default as FallbackUI } from './FallbackUI';
-export { default as FilterButton } from './FilterButton';
-export { default as IconButton } from './IconButton';
-export { default as Image } from './Image';
-export { default as MenuButton } from './MenuButton';
-export { default as ShowMoreButton } from './ScrollButton';
-export { default as SearchButton } from './SearchButton';
-export { default as SearchInput } from './SearchInput';
-export { default as ToggleButton } from './ToggleButton';
+export { FallbackUI } from './FallbackUI';
+export { FilterButton } from './FilterButton';
+export { IconButton } from './IconButton';
+export { Image } from './Image';
+export { MenuButton } from './MenuButton';
+export { ScrollButton as ShowMoreButton } from './ScrollButton';
+export { SearchButton } from './SearchButton';
+export { SearchInput } from './SearchInput';
+export { ToggleButton } from './ToggleButton';

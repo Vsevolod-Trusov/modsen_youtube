@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
-import getGlobalStyles from '@/assets';
+import { getGlobalStyles } from '@/assets';
 import { CustomThemeProvider, ErrorBoundary, FallbackUI } from '@/components';
 import { MoviesPage } from '@/pages';
 import { store } from '@/store';

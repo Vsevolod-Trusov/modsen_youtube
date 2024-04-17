@@ -14,4 +14,4 @@ const IconButton: FC<IIconButton> = ({ link, img }) => {
     </StyledContainer>
   );
 };
-export default IconButton;
+export { IconButton };

@@ -18,4 +18,4 @@ const FrameSkeletonLoader: FC = () => {
     </StyledContainer>
   );
 };
-export default FrameSkeletonLoader;
+export { FrameSkeletonLoader };

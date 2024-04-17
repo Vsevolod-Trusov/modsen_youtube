@@ -70,4 +70,4 @@ const PopupPlayer: FC = () => {
   );
 };
 
-export default PopupPlayer;
+export { PopupPlayer };

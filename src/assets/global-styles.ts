@@ -37,4 +37,4 @@ const getGlobalStyles = () => createGlobalStyle`
 }
    `;
 
-export default getGlobalStyles;
+export { getGlobalStyles };
