@@ -71,7 +71,7 @@ const FilmsListContainer: FC = () => {
     }
 
     debounceFindFilms(searchValue, key);
-  }, [films, amount, category, searchValue]);
+  }, [amount, category, searchValue]);
 
   return (
     <FilmsList currentFilms={currentFilms} handleGetMore={handleGetMore} />
