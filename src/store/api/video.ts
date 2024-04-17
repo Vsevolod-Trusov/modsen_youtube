@@ -44,7 +44,7 @@ export const videoApi = createApi({
         const controller = new AbortController();
 
         return {
-          url: `${id}`,
+          url: `/${id}`,
           method: METHODS.GET,
           headers: IMDB_HEADERS,
           signal: controller.signal,
