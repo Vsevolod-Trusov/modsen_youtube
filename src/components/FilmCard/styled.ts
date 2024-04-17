@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { DISPLAY_FLEX } from '@/contants';
+import { DISPLAY_FLEX, FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
 
 const StyledContainer = styled('section')(({ theme }) => ({
   flexBasis: '25%',
@@ -13,7 +13,7 @@ const StyledContainer = styled('section')(({ theme }) => ({
     background: theme.colors.gray,
     cursor: 'pointer',
     color: theme.colors.black,
-    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+    ...HOVER_ANIMATION(theme),
     transition: '.5s',
   },
   '&:active': {
@@ -49,7 +49,7 @@ const StyledAuthorSection = styled('div')(({ theme }) => ({
   flexDirection: 'column',
   rowGap: '5px',
   marginTop: '10px',
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontWeight: 500,
   lineHeight: '18px',
 

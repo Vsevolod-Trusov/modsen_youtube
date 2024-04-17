@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { FONT_FAMILY } from '@/contants';
+
 const StyledContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   height: '100%',
@@ -21,7 +23,7 @@ const StyledImageWrapper = styled('div')({
 });
 
 const StyledLogoText = styled('span')({
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontSize: '18px',
   fontWeight: '700',
   lineHeight: '21px',

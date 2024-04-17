@@ -1,13 +1,13 @@
 import { styled } from 'styled-components';
 
-import { DISPLAY_FLEX } from '@/contants';
+import { DISPLAY_FLEX, FONT_FAMILY } from '@/contants';
 
 const StyledContainer = styled('div')(({ theme }) => ({
   ...DISPLAY_FLEX,
   justifyContent: 'flex-start',
   width: '50%',
   height: '100%',
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontSize: '20px',
   fontWeight: 500,
   lineHeight: '23px',

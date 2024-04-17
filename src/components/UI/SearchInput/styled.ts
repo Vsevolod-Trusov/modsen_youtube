@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
+
 const StyledInput = styled('input')(({ theme }) => ({
   width: '570px',
   height: '38px',
@@ -7,7 +9,7 @@ const StyledInput = styled('input')(({ theme }) => ({
   padding: '5px 15px',
   outline: 'none',
   background: theme.colors.lightGray,
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontSize: '14px',
   fontWeight: '400',
   lineHeight: '16px',
@@ -15,7 +17,7 @@ const StyledInput = styled('input')(({ theme }) => ({
   '&:hover': {
     border: `1px solid ${theme.colors.darkGray}`,
     background: theme.colors.gray,
-    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+    ...HOVER_ANIMATION(theme),
   },
   '&:focus': {
     background: theme.colors.white,

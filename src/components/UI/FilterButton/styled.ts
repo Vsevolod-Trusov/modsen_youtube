@@ -1,12 +1,14 @@
 import { styled } from 'styled-components';
 
+import { FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
+
 const StyledFilterButton = styled('button')(({ theme }) => ({
   width: 'auto',
   padding: '8px 20px',
   borderRadius: '15px',
   border: `2px solid ${theme.colors.gray}`,
   backgroundColor: theme.colors.lightGray,
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontWeight: '400',
   fontSize: '14px',
   lineHeight: '16.41px',
@@ -16,7 +18,7 @@ const StyledFilterButton = styled('button')(({ theme }) => ({
   '&:hover': {
     backgroundColor: theme.colors.gray,
     cursor: 'pointer',
-    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+    ...HOVER_ANIMATION(theme),
   },
   '&:active': {
     backgroundColor: theme.colors.black,
@@ -35,7 +37,7 @@ const StyledSelectedCategoryButton = styled(StyledFilterButton)(
     '&:hover': {
       border: `2px solid ${theme.colors.gray}`,
       color: theme.colors.black,
-      animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+      ...HOVER_ANIMATION(theme),
     },
 
     '&:active': {

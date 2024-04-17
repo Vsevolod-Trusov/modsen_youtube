@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+import { FONT_FAMILY, HOVER_SCROLL_ANIMATION } from '@/contants';
+
 const StyledButton = styled('button')(({ theme }) => ({
   width: '192px',
   height: '52px',
@@ -7,17 +9,16 @@ const StyledButton = styled('button')(({ theme }) => ({
   border: 'none',
   backgroundColor: theme.colors.orange,
   color: theme.colors.darkThemeWhite || theme.colors.white,
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontSize: '22px',
   fontWeight: '700',
   lineHeight: '26px',
   textAlign: 'center',
 
   '&:hover': {
-    cursor: 'pointer',
     backgroundColor: theme.colors.darkOrange,
-    animation: `hover_scroll_animation ${theme.hoverAnimationDuration} linear`,
-    transition: '.1s',
+    ...HOVER_SCROLL_ANIMATION,
+    transition: '.5s',
   },
 
   '&:active': {
