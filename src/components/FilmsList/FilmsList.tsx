@@ -14,7 +14,7 @@ import {
 
 const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
   <StyledFilmsContainer>
-    {currentFilms.length ? (
+    {currentFilms?.length ? (
       <>
         {currentFilms.map(({ title, year, image, id }) => (
           <FilmCard

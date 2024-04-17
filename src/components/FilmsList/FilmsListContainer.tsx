@@ -30,7 +30,7 @@ const FilmsListContainer: FC = () => {
       const filmsPromise = findFilms(searchValue);
       filmsPromise.then(({ data }) => {
         const list = getFilteredList(
-          Array.from(data as Film[]),
+          Array.from((data ?? []) as Film[]),
           category,
           searchValue,
         );
@@ -53,7 +53,7 @@ const FilmsListContainer: FC = () => {
   });
   const [amount, setAmount] = useState(DEFAULT_AMOUNT);
   const currentFilms = useMemo(
-    () => films.slice(ZERO, amount),
+    () => films?.slice(ZERO, amount),
     [films, amount],
   );
   const handleGetMore = useCallback(() => {
