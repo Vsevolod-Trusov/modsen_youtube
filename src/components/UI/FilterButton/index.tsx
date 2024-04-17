@@ -19,11 +19,14 @@ const FilterButton: FC<IFilterButton> = ({ name, testId }) => {
   return (
     <>
       {selectedCategory === name ? (
-        <StyledSelectedCategoryButton test-id={testId}>
+        <StyledSelectedCategoryButton data-test-id={testId}>
           {name}
         </StyledSelectedCategoryButton>
       ) : (
-        <StyledFilterButton onClick={handleSelectingCategory} test-id={testId}>
+        <StyledFilterButton
+          onClick={handleSelectingCategory}
+          data-test-id={testId}
+        >
           {name}
         </StyledFilterButton>
       )}

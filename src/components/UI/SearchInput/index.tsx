@@ -12,7 +12,7 @@ const SearchInput: FC<
       placeholder={placeholder}
       value={value}
       onChange={handler}
-      test-id={TEST_IDS.SEARCH_INPUT_ID}
+      data-test-id={TEST_IDS.SEARCH_INPUT_ID}
     />
   );
 };

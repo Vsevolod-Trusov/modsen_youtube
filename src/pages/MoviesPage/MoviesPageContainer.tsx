@@ -2,22 +2,33 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { EMPTY_STRING } from '@/contants';
-import { useGetFilmsQuery } from '@/store/api';
-import { setFilms, setIsLoading } from '@/store/slices';
+import { useTypedSelector } from '@/hooks';
+import { useLazyGetFilmsQuery } from '@/store/api';
+import { getFilms, setFilms, setIsLoading } from '@/store/slices';
 
 import MoviesPage from './MoviesPage';
 
 const MoviesPageContainer = () => {
-  const { data, isLoading } = useGetFilmsQuery(EMPTY_STRING);
+  const [getApiFilms, { isLoading }] = useLazyGetFilmsQuery();
+  const films = useTypedSelector(getFilms);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (data && data.length > 0) {
-      dispatch(setFilms(data));
+    if (films.length) {
+      dispatch(setIsLoading(false));
+
+      return;
     }
+
+    getApiFilms(EMPTY_STRING).then(({ data }) => {
+      dispatch(setFilms(data));
+    });
+  }, []);
+
+  useEffect(() => {
     dispatch(setIsLoading(isLoading));
-  }, [data, isLoading]);
+  }, [isLoading]);
 
   return <MoviesPage />;
 };

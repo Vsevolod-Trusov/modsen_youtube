@@ -50,6 +50,7 @@ export const videoApi = createApi({
 
 export const {
   useGetFilmsQuery,
+  useLazyGetFilmsQuery,
   useGetFilmByIdQuery,
   useLazyGetFilmByIdQuery,
   useLazyGetFilteredFilmsQuery,

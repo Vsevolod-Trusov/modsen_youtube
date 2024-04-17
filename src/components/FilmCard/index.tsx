@@ -33,22 +33,25 @@ const FilmCard: FC<IImage> = ({
   };
 
   return (
-    <StyledContainer onClick={handleOpenPlayer} test-id={TEST_IDS.FILM_ITEM_ID}>
+    <StyledContainer
+      onClick={handleOpenPlayer}
+      data-test-id={TEST_IDS.FILM_ITEM_ID}
+    >
       <StyledPreviewSection>
-        <Image src={preview} alt={'img'} testId={TEST_IDS.IMAGE_ID} />
+        <Image src={preview} alt={'img'} data-test-id={TEST_IDS.IMAGE_ID} />
       </StyledPreviewSection>
       <StyledDescriptionSection>
         <StyledAvatarContainer>
           <StyledAvatar src={avatar} alt={'img'} />
         </StyledAvatarContainer>
         <StyledAuthorSection>
-          <StyledTitle test-id={TEST_IDS.TITLE_ID}>{title}</StyledTitle>
+          <StyledTitle data-test-id={TEST_IDS.TITLE_ID}>{title}</StyledTitle>
           <div>
-            <StyledSubTitle test-id={TEST_IDS.AUTHOR_ID}>
+            <StyledSubTitle data-test-id={TEST_IDS.AUTHOR_ID}>
               {author}
             </StyledSubTitle>
             <StyledSubTitle>&#8226;</StyledSubTitle>
-            <StyledSubTitle test-id={TEST_IDS.YEAR_ID}>
+            <StyledSubTitle data-test-id={TEST_IDS.YEAR_ID}>
               {createdAt}
             </StyledSubTitle>
           </div>

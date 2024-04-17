@@ -2,14 +2,18 @@ import React, { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { FrameSkeletonLoader } from '@/components';
+import { EMPTY_STRING } from '@/contants';
 import { useTypedSelector } from '@/hooks';
-import { useGetFilmByIdQuery } from '@/store/api';
+import { useLazyGetFilmByIdQuery } from '@/store/api';
 import {
   getIsPlayerOpened,
   getSelectedFilmId,
+  getStorage,
+  saveSearchResult,
   setIsPlayerOpened,
 } from '@/store/slices';
 import { Film } from '@/types';
+import { getKey } from '@/utils';
 
 import {
   CloseButton,
@@ -21,10 +25,9 @@ import {
 
 const PopupPlayer: FC = () => {
   const selectedFilmId = useTypedSelector(getSelectedFilmId);
-  const { data, isLoading } = useGetFilmByIdQuery(selectedFilmId);
-
+  const elasticStorage = useTypedSelector(getStorage);
+  const [getFilmById, { isLoading }] = useLazyGetFilmByIdQuery();
   const [film, setFilm] = useState<Film>({} as Film);
-
   const isPlayerOpened = useTypedSelector(getIsPlayerOpened);
   const dispatch = useDispatch();
 
@@ -33,14 +36,27 @@ const PopupPlayer: FC = () => {
   };
 
   useEffect(() => {
-    if (data) {
-      setFilm(data);
+    if (!selectedFilmId) return;
+
+    const key = getKey(selectedFilmId);
+
+    if (elasticStorage[key]) {
+      setFilm(elasticStorage[key] as Film);
+
+      return;
     }
-  }, [data]);
+
+    getFilmById(EMPTY_STRING).then(({ data }) => {
+      if (!data) return;
+
+      setFilm(data);
+      dispatch(saveSearchResult({ key, result: data }));
+    });
+  }, [selectedFilmId]);
 
   return (
     <>
-      {isPlayerOpened && (
+      {isPlayerOpened && !!film.trailer_embed_link && (
         <Overlay>
           <PopupContent>
             <CloseButton onClick={togglePopup}>&times;</CloseButton>

@@ -28,7 +28,7 @@ export const getFilteredList = (
   return data;
 };
 
-export const getKey = (searchValue: string, category: string) => {
+export const getKey = (searchValue: string, category?: string) => {
   let key = EMPTY_STRING;
 
   if (searchValue) {
