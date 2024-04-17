@@ -17,8 +17,6 @@ const debounceHandler = ({
     ({ key }: IStorage) => key === newKey,
   );
   if (indexStorageCeil !== -1) {
-    console.log('here');
-
     debounceCachedFilms(elasticStorage.storage[indexStorageCeil].value);
 
     return;
