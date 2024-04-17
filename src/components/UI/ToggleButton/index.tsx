@@ -25,7 +25,7 @@ const ToggleButton: FC = () => {
   };
 
   return (
-    <StyledToggleContainer test-id={TEST_IDS.TOGGLE_THEME_BUTTON_ID}>
+    <StyledToggleContainer data-test-id={TEST_IDS.TOGGLE_THEME_BUTTON_ID}>
       <StyledLabel>
         <StyledInput
           type='checkbox'

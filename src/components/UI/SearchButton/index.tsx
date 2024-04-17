@@ -8,7 +8,7 @@ const SearchButton: FC<
   PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement>>
 > = ({ children, onClick: handler }) => {
   return (
-    <StyledButton onClick={handler} test-id={TEST_IDS.SEARCH_BUTTON_ID}>
+    <StyledButton onClick={handler} data-test-id={TEST_IDS.SEARCH_BUTTON_ID}>
       {children}
     </StyledButton>
   );
