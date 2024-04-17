@@ -12,3 +12,18 @@ export interface IFilmStore {
   filmId: string;
   isPlayerOpened: boolean;
 }
+
+export interface IStorage {
+  key: string;
+  value: Film[];
+}
+
+export interface ISelectedFilmsStorage {
+  key: string;
+  value: Film;
+}
+
+export interface IElastic {
+  storage: IStorage[];
+  selectedFilmsStorage: ISelectedFilmsStorage[];
+}

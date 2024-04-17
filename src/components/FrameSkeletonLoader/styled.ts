@@ -4,7 +4,7 @@ import {
   StyledImageSkeleton,
   StyledLoader,
   StyledWrapper,
-} from '@/components/SkeletonLoader/styles';
+} from '@/components/SkeletonLoader/styled';
 
 const StyledFrameLoader = styled(StyledLoader)({
   width: '100%',

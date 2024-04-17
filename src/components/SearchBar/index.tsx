@@ -5,6 +5,7 @@ import { SearchIcon } from '@/assets';
 import { Image, SearchButton, SearchInput } from '@/components';
 import { EMPTY_STRING } from '@/contants';
 import { setSearchValue } from '@/store/slices';
+import { ISearchBar } from '@/types';
 
 import { StyledSearchImageWrapper, StyledSearchSection } from './styled';
 
@@ -36,4 +37,4 @@ const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
   );
 };
 
-export default SearchBar;
+export { SearchBar };

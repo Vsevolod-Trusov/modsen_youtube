@@ -20,4 +20,4 @@ const CategoriesSection: FC = () => {
     </StyledContainer>
   );
 };
-export default CategoriesSection;
+export { CategoriesSection };

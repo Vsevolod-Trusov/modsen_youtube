@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { ErrorBoundary } from '@/assets';
 import { Image } from '@/components';
 
-import { StyledContainer, StyledErrorMessage } from './styles';
+import { StyledContainer, StyledErrorMessage } from './styled';
 
 const FallbackUI: FC = () => {
   return (
@@ -15,4 +15,4 @@ const FallbackUI: FC = () => {
     </StyledContainer>
   );
 };
-export default FallbackUI;
+export { FallbackUI };

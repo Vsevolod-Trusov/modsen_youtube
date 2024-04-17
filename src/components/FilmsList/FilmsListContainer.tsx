@@ -1,7 +1,8 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { DEBOUNCE_TIME, DEFAULT_AMOUNT, EMPTY_STRING, ZERO } from '@/contants';
+import { DEBOUNCE_TIME, DEFAULT_AMOUNT, ZERO } from '@/contants';
+import { debounceHandler } from '@/helpers';
 import { useDebouncedFunction, useTypedSelector } from '@/hooks';
 import { useLazyGetFilteredFilmsQuery } from '@/store/api';
 import {
@@ -13,9 +14,9 @@ import {
   setFilms,
 } from '@/store/slices';
 import { Film } from '@/types';
-import { getFilteredList, getKey } from '@/utils';
+import { getFilteredList } from '@/utils';
 
-import FilmsList from './FilmsList';
+import { FilmsList } from './FilmsList';
 
 const FilmsListContainer: FC = () => {
   const films = useTypedSelector(getFilms);
@@ -29,7 +30,7 @@ const FilmsListContainer: FC = () => {
       const filmsPromise = findFilms(searchValue);
       filmsPromise.then(({ data }) => {
         const list = getFilteredList(
-          Array.from(data as Film[]),
+          Array.from((data ?? []) as Film[]),
           category,
           searchValue,
         );
@@ -44,7 +45,6 @@ const FilmsListContainer: FC = () => {
     },
     delay: DEBOUNCE_TIME,
   });
-
   const debounceCachedFilms = useDebouncedFunction({
     func: (films) => {
       dispatch(setFilms(films?.slice(ZERO, amount)));
@@ -52,26 +52,30 @@ const FilmsListContainer: FC = () => {
     delay: DEBOUNCE_TIME,
   });
   const [amount, setAmount] = useState(DEFAULT_AMOUNT);
-
-  const handleGetMore = () => {
+  const currentFilms = useMemo(
+    () => films?.slice(ZERO, amount),
+    [films, amount],
+  );
+  const handleGetMore = useCallback(() => {
     setAmount((prevState) => prevState + DEFAULT_AMOUNT);
-  };
+  }, [setAmount]);
+  const filterFilms = useCallback(() => {
+    debounceHandler({
+      searchValue,
+      category,
+      elasticStorage,
+      debounceCachedFilms,
+      debounceFindFilms,
+    });
+  }, [
+    searchValue,
+    category,
+    elasticStorage,
+    debounceCachedFilms,
+    debounceFindFilms,
+  ]);
 
-  const currentFilms = films.slice(ZERO, amount);
-
-  useEffect(() => {
-    const key = getKey(searchValue, category);
-
-    if (key === EMPTY_STRING) return;
-
-    if (elasticStorage[key]) {
-      debounceCachedFilms(elasticStorage[key]);
-
-      return;
-    }
-
-    debounceFindFilms(searchValue, key);
-  }, [films, amount, category, searchValue]);
+  filterFilms();
 
   return (
     <FilmsList currentFilms={currentFilms} handleGetMore={handleGetMore} />

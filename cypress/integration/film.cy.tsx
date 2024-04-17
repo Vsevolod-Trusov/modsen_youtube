@@ -10,28 +10,24 @@ it('get info abount one film. Compare info about it', () => {
   cy.get(`[data-test-id="${TEST_IDS.IMAGE_ID}"]`)
     .invoke('attr', 'src')
     .then((text) => {
-      console.log(text);
       expect(text).to.equal(MOCKED_FILM.MOCKED_POSTER_URL);
     });
 
   cy.get(`[data-test-id="${TEST_IDS.TITLE_ID}"]`)
     .invoke('text')
     .then((text) => {
-      console.log(text);
       expect(text).to.equal(MOCKED_FILM.MOCKED_FILM_TITLE);
     });
 
   cy.get(`[data-test-id="${TEST_IDS.AUTHOR_ID}"]`)
     .invoke('text')
     .then((text) => {
-      console.log(text);
       expect(text).to.equal(MOCKED_FILM.MOCKED_FILM_AUTHOR);
     });
 
   cy.get(`[data-test-id="${TEST_IDS.YEAR_ID}"]`)
     .invoke('text')
     .then((text) => {
-      console.log(text);
       expect(text).to.equal(MOCKED_FILM.MOCKED_FILM_YEAR);
     });
 });

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const StyledMainContainer = styled('div')({
+const StyledMainContainer = styled('main')({
   minHeight: '400px',
   flexGrow: 1,
 });

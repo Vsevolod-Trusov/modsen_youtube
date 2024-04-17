@@ -2,7 +2,7 @@ import { Component, ErrorInfo, PropsWithChildren } from 'react';
 
 import { IErrorBoundary, IErrorState } from '@/types';
 
-export default class ErrorBoundary extends Component<
+export class ErrorBoundary extends Component<
   PropsWithChildren<IErrorBoundary>,
   IErrorState
 > {

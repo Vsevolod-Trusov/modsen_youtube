@@ -2,13 +2,11 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { SLICE_NAMES } from '@/contants';
 import { RootState } from '@/store';
-
-interface IElastic {
-  storage: any;
-}
+import { IElastic } from '@/types';
 
 const initials: IElastic = {
-  storage: {},
+  storage: [],
+  selectedFilmsStorage: [],
 };
 
 const elastic = createSlice({
@@ -17,14 +15,27 @@ const elastic = createSlice({
   reducers: {
     saveSearchResult: (state, { payload }) => {
       return {
-        storage: { ...state.storage, ...{ [payload.key]: payload.result } },
+        ...state,
+        storage: [
+          ...state.storage,
+          { key: payload.key, value: payload.result },
+        ],
+      };
+    },
+    saveSelectedFilm: (state, { payload }) => {
+      return {
+        ...state,
+        selectedFilmsStorage: [
+          ...state.selectedFilmsStorage,
+          { key: payload.key, value: payload.result },
+        ],
       };
     },
   },
 });
 
-export const { saveSearchResult } = elastic.actions;
+export const { saveSearchResult, saveSelectedFilm } = elastic.actions;
 
-export const getStorage = (state: RootState) => state.elastic.storage;
+export const getStorage = (state: RootState) => state.elastic;
 
 export default elastic.reducer;

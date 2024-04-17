@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Image } from '@/components';
 import { TEST_IDS } from '@/contants';
 import { setIsPlayerOpened, setSelectedFilmId } from '@/store/slices';
+import { IImage } from '@/types';
 
 import {
   StyledAuthorSection,
@@ -15,7 +16,6 @@ import {
   StyledSubTitle,
   StyledTitle,
 } from './styled';
-import { IImage } from './types';
 
 const FilmCard: FC<IImage> = ({
   avatar,
@@ -60,4 +60,4 @@ const FilmCard: FC<IImage> = ({
     </StyledContainer>
   );
 };
-export default FilmCard;
+export { FilmCard };

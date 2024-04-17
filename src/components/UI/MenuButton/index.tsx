@@ -14,4 +14,4 @@ const MenuButton: FC = () => {
     </StyledContainer>
   );
 };
-export default MenuButton;
+export { MenuButton };

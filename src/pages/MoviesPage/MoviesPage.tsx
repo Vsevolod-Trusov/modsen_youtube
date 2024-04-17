@@ -31,4 +31,4 @@ const MoviesPage: FC = () => {
   );
 };
 
-export default MoviesPage;
+export { MoviesPage };

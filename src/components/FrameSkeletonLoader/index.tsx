@@ -5,7 +5,7 @@ import {
   StyledFrameImageSkeleton,
   StyledFrameLoader,
   StyledFrameWrapper,
-} from './styles';
+} from './styled';
 
 const FrameSkeletonLoader: FC = () => {
   return (
@@ -18,4 +18,4 @@ const FrameSkeletonLoader: FC = () => {
     </StyledContainer>
   );
 };
-export default FrameSkeletonLoader;
+export { FrameSkeletonLoader };

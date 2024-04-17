@@ -33,4 +33,4 @@ const SearchSection: FC = () => {
   );
 };
 
-export default SearchSection;
+export { SearchSection };

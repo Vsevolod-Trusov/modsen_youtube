@@ -33,4 +33,4 @@ const FilterButton: FC<IFilterButton> = ({ name, testId }) => {
     </>
   );
 };
-export default FilterButton;
+export { FilterButton };

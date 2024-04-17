@@ -11,4 +11,4 @@ const CompanySection: FC = () => {
     </StyledContainer>
   );
 };
-export default CompanySection;
+export { CompanySection };

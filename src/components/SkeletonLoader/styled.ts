@@ -1,10 +1,11 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX } from '@/contants';
+
 const StyledLoader = styled('div')(({ theme }) => ({
   position: 'relative',
   marginBottom: '10px',
-  display: 'flex',
-  flexDirection: 'column',
+  ...DISPLAY_FLEX,
   flexBasis: '25%',
   maxWidth: '332px',
   padding: '20px 12px',

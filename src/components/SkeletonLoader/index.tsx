@@ -7,7 +7,7 @@ import {
   StyledLoader,
   StyledSecondLine,
   StyledWrapper,
-} from './styles';
+} from './styled';
 
 const SkeletonLoader: FC = () => {
   return (
@@ -21,4 +21,4 @@ const SkeletonLoader: FC = () => {
     </StyledLoader>
   );
 };
-export default SkeletonLoader;
+export { SkeletonLoader };

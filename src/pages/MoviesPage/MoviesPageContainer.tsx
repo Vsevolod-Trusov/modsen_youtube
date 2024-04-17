@@ -6,7 +6,7 @@ import { useTypedSelector } from '@/hooks';
 import { useLazyGetFilmsQuery } from '@/store/api';
 import { getFilms, setFilms, setIsLoading } from '@/store/slices';
 
-import MoviesPage from './MoviesPage';
+import { MoviesPage } from './MoviesPage';
 
 const MoviesPageContainer = () => {
   const [getApiFilms, { isLoading }] = useLazyGetFilmsQuery();

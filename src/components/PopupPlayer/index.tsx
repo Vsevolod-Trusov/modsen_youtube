@@ -1,19 +1,17 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { FrameSkeletonLoader } from '@/components';
-import { EMPTY_STRING } from '@/contants';
+import { selectedFilmHandler } from '@/helpers';
 import { useTypedSelector } from '@/hooks';
 import { useLazyGetFilmByIdQuery } from '@/store/api';
 import {
   getIsPlayerOpened,
   getSelectedFilmId,
   getStorage,
-  saveSearchResult,
   setIsPlayerOpened,
 } from '@/store/slices';
 import { Film } from '@/types';
-import { getKey } from '@/utils';
 
 import {
   CloseButton,
@@ -21,7 +19,7 @@ import {
   PopupContent,
   StyledFrame,
   StyledFrameWrapper,
-} from './styles';
+} from './styled';
 
 const PopupPlayer: FC = () => {
   const selectedFilmId = useTypedSelector(getSelectedFilmId);
@@ -30,29 +28,20 @@ const PopupPlayer: FC = () => {
   const [film, setFilm] = useState<Film>({} as Film);
   const isPlayerOpened = useTypedSelector(getIsPlayerOpened);
   const dispatch = useDispatch();
-
-  const togglePopup = () => {
+  const togglePopup = useCallback(() => {
     dispatch(setIsPlayerOpened(!isPlayerOpened));
-  };
-
-  useEffect(() => {
-    if (!selectedFilmId) return;
-
-    const key = getKey(selectedFilmId);
-
-    if (elasticStorage[key]) {
-      setFilm(elasticStorage[key] as Film);
-
-      return;
-    }
-
-    getFilmById(EMPTY_STRING).then(({ data }) => {
-      if (!data) return;
-
-      setFilm(data);
-      dispatch(saveSearchResult({ key, result: data }));
+  }, [isPlayerOpened]);
+  const filterFilms = useCallback(() => {
+    selectedFilmHandler({
+      selectedFilmId,
+      setFilm,
+      elasticStorage,
+      dispatch,
+      getFilmById,
     });
-  }, [selectedFilmId]);
+  }, [selectedFilmId, setFilm, elasticStorage, dispatch, getFilmById]);
+
+  useEffect(() => filterFilms(), [filterFilms]);
 
   return (
     <>
@@ -81,4 +70,4 @@ const PopupPlayer: FC = () => {
   );
 };
 
-export default PopupPlayer;
+export { PopupPlayer };

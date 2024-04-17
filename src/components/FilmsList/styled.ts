@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import { StyledContainer } from '@/components/CompanySection/styled';
 
-const StyledFilmsContainer = styled('div')({
+const StyledFilmsContainer = styled('article')({
   display: 'flex',
   width: '100%',
   height: '100%',

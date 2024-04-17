@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { HOVER_ANIMATION } from '@/contants';
+
 const StyledButton = styled('button')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
@@ -14,7 +16,7 @@ const StyledButton = styled('button')(({ theme }) => ({
     border: `1px solid ${theme.colors.darkGray}`,
     background: theme.colors.gray,
     cursor: 'pointer',
-    animation: `hover_item_animation ${theme.hoverAnimationDuration} linear`,
+    ...HOVER_ANIMATION(theme),
   },
   '&:active': {
     border: `1px solid ${theme.colors.black}`,

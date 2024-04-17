@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 
 import { StyledAvatar } from '@/components/FilmCard/styled';
+import { IIconButton } from '@/types';
 
 import { StyledContainer } from './styled';
-import { IIconButton } from './types';
 
 const IconButton: FC<IIconButton> = ({ link, img }) => {
   return (
@@ -14,4 +14,4 @@ const IconButton: FC<IIconButton> = ({ link, img }) => {
     </StyledContainer>
   );
 };
-export default IconButton;
+export { IconButton };

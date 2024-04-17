@@ -1,15 +1,16 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX, FONT_FAMILY } from '@/contants';
+
 const StyledContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
+  ...DISPLAY_FLEX,
   width: '30%',
   margin: '0 auto',
 });
 
 const StyledErrorMessage = styled('p')(({ theme }) => ({
   textAlign: 'center',
-  fontFamily: 'Roboto',
+  ...FONT_FAMILY,
   fontSize: '24px',
   fontWeight: 500,
 
