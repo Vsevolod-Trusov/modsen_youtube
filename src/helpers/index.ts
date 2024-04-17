@@ -1,1 +1,2 @@
-export * from './debounce-hendler';
+export * from './debounce-handler';
+export * from './selected-film-handler';

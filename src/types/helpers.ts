@@ -1,3 +1,18 @@
+import { Dispatch as ReduxDispatch, UnknownAction } from '@reduxjs/toolkit';
+import { LazyQueryTrigger } from '@reduxjs/toolkit/dist/query/react/buildHooks';
+import {
+  BaseQueryFn,
+  FetchArgs,
+  FetchBaseQueryError,
+  FetchBaseQueryMeta,
+  QueryDefinition,
+} from '@reduxjs/toolkit/query';
+import { Dispatch } from 'react';
+
+import { REDUCERS_PATH } from '@/contants';
+
+import { Film } from './video';
+
 interface IDebounceHelper {
   searchValue: string;
   category?: string;
@@ -6,4 +21,25 @@ interface IDebounceHelper {
   elasticStorage: any;
 }
 
-export { IDebounceHelper };
+interface ISelectedFilmHelper extends Pick<IDebounceHelper, 'elasticStorage'> {
+  selectedFilmId?: string;
+  setFilm: Dispatch<React.SetStateAction<Film>>;
+  dispatch: ReduxDispatch<UnknownAction>;
+  getFilmById: LazyQueryTrigger<
+    QueryDefinition<
+      string,
+      BaseQueryFn<
+        string | FetchArgs,
+        unknown,
+        FetchBaseQueryError,
+        {},
+        FetchBaseQueryMeta
+      >,
+      never,
+      Film,
+      REDUCERS_PATH
+    >
+  >;
+}
+
+export { IDebounceHelper, ISelectedFilmHelper };
