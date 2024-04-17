@@ -29,7 +29,7 @@ const ToggleButton: FC = () => {
       <StyledLabel>
         <StyledInput
           type='checkbox'
-          checked={currentTheme}
+          defaultChecked={currentTheme}
           className='input'
           onClick={handleToggle}
         />

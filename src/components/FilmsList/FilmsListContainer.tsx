@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { DEBOUNCE_TIME, DEFAULT_AMOUNT, ZERO } from '@/contants';
+import { DEBOUNCE_TIME, DEFAULT_AMOUNT, EMPTY_STRING, ZERO } from '@/contants';
 import { useDebouncedFunction, useTypedSelector } from '@/hooks';
 import { useLazyGetFilteredFilmsQuery } from '@/store/api';
 import {
@@ -10,6 +10,7 @@ import {
   getSearchValue,
   getStorage,
   saveSearchResult,
+  setFilms,
 } from '@/store/slices';
 import { Film } from '@/types';
 
@@ -37,7 +38,7 @@ const FilmsListContainer: FC = () => {
           dispatch(saveSearchResult({ key, result: list }));
         }
 
-        setCurrentFilms(list?.slice(ZERO, amount));
+        dispatch(setFilms(list?.slice(ZERO, amount)));
         return;
       });
     },
@@ -46,15 +47,16 @@ const FilmsListContainer: FC = () => {
 
   const debounceCachedFilms = useDebouncedFunction({
     func: (films) => {
-      setCurrentFilms(films?.slice(ZERO, amount));
+      dispatch(setFilms(films?.slice(ZERO, amount)));
     },
     delay: DEBOUNCE_TIME,
   });
   const [amount, setAmount] = useState(DEFAULT_AMOUNT);
-  const [currentFilms, setCurrentFilms] = useState<Film[]>([]);
 
   useEffect(() => {
     const key = getKey(searchValue, category);
+
+    if (key === EMPTY_STRING) return;
 
     if (elasticStorage[key]) {
       debounceCachedFilms(elasticStorage[key]);
@@ -69,8 +71,6 @@ const FilmsListContainer: FC = () => {
     setAmount((prevState) => prevState + DEFAULT_AMOUNT);
   };
 
-  return (
-    <FilmsList currentFilms={currentFilms} handleGetMore={handleGetMore} />
-  );
+  return <FilmsList currentFilms={films} handleGetMore={handleGetMore} />;
 };
 export default FilmsListContainer;
