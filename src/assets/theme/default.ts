@@ -1,18 +1,11 @@
-const SIZES = {
-  sm: '780px',
-};
+import { PALETTE, SIZES } from '@/contants';
 
 const DEFAULT_THEME = {
   hoverAnimationDuration: '0.3s',
   colors: {
-    black: '#000',
+    ...PALETTE,
     white: '#fff',
-    gray: '#d2d2d2',
     lightGray: '#f0f0f0',
-    darkGray: '#8b8a8a',
-    orange: '#ff8a00',
-    darkOrange: '#b76403',
-    lightOrange: '#f7921c',
   },
   skeletonAnimationBackground: '240, 240, 240',
   breakpoints: {
