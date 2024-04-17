@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const StyledContainer = styled('div')(({ theme }) => ({
+const StyledContainer = styled('section')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   flexBasis: '25%',

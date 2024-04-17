@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const StyledHeaderContainer = styled('div')(({ theme }) => ({
+const StyledHeaderContainer = styled('header')(({ theme }) => ({
   height: '160px',
   backgroundColor: 'transparent',
   flexShrink: '0',
@@ -10,7 +10,7 @@ const StyledHeaderContainer = styled('div')(({ theme }) => ({
   },
 }));
 
-const StyledHeaderWrapper = styled('div')(({ theme }) => ({
+const StyledHeaderWrapper = styled('nav')(({ theme }) => ({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',

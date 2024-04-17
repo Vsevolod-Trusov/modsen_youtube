@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const StyledFooterContainer = styled('div')(({ theme }) => ({
+const StyledFooterContainer = styled('footer')(({ theme }) => ({
   height: '299px',
   flexShrink: '0',
   padding: '65px 10px 10px 53px',
