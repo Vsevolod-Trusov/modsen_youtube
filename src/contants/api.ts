@@ -9,6 +9,6 @@ export const enum URLS {
 }
 
 export const IMDB_HEADERS = {
-  'X-RapidAPI-Key': 'a238d8829bmsh33bc051fdff0e53p17a708jsnf924ae999f32',
+  'X-RapidAPI-Key': 'a238d8829bmsh33bc051fdff0e53p17a708jsnf924ae999f32', // e35e87121bmsh31bd05cc637a84ap1a7c26jsna09bfbe00002 чистый тариф
   'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com',
 };
