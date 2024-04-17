@@ -1,4 +1,3 @@
-import { EMPTY_STRING } from '@/contants';
 import { saveSelectedFilm } from '@/store/slices';
 import { Film, ISelectedFilmHelper, ISelectedFilmsStorage } from '@/types';
 import { getKey } from '@/utils';
@@ -25,7 +24,7 @@ const selectedFilmHandler = ({
     return;
   }
 
-  getFilmById(EMPTY_STRING).then(({ data }) => {
+  getFilmById(selectedFilmId).then(({ data }) => {
     if (!data) return;
 
     setFilm(data);
