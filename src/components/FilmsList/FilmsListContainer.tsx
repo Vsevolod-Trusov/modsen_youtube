@@ -13,9 +13,9 @@ import {
   setFilms,
 } from '@/store/slices';
 import { Film } from '@/types';
+import { getFilteredList, getKey } from '@/utils';
 
 import FilmsList from './FilmsList';
-import { getFilteredList, getKey } from './util';
 
 const FilmsListContainer: FC = () => {
   const films = useTypedSelector(getFilms);
@@ -53,6 +53,12 @@ const FilmsListContainer: FC = () => {
   });
   const [amount, setAmount] = useState(DEFAULT_AMOUNT);
 
+  const handleGetMore = () => {
+    setAmount((prevState) => prevState + DEFAULT_AMOUNT);
+  };
+
+  const currentFilms = films.slice(ZERO, amount);
+
   useEffect(() => {
     const key = getKey(searchValue, category);
 
@@ -67,10 +73,8 @@ const FilmsListContainer: FC = () => {
     debounceFindFilms(searchValue, key);
   }, [films, amount, category, searchValue]);
 
-  const handleGetMore = () => {
-    setAmount((prevState) => prevState + DEFAULT_AMOUNT);
-  };
-
-  return <FilmsList currentFilms={films} handleGetMore={handleGetMore} />;
+  return (
+    <FilmsList currentFilms={currentFilms} handleGetMore={handleGetMore} />
+  );
 };
 export default FilmsListContainer;
