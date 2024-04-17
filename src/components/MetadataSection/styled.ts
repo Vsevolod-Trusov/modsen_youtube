@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX } from '@/contants';
+
 const StyledContainer = styled('div')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
+  ...DISPLAY_FLEX,
   justifyContent: 'flex-start',
   width: '50%',
   height: '100%',

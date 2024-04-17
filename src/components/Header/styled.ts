@@ -1,5 +1,7 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX } from '@/contants';
+
 const StyledHeaderContainer = styled('header')(({ theme }) => ({
   height: '160px',
   backgroundColor: 'transparent',
@@ -11,8 +13,7 @@ const StyledHeaderContainer = styled('header')(({ theme }) => ({
 }));
 
 const StyledHeaderWrapper = styled('nav')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
+  ...DISPLAY_FLEX,
   width: '100%',
   height: '100%',
 

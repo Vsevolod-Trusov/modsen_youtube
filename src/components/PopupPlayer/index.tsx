@@ -19,7 +19,7 @@ import {
   PopupContent,
   StyledFrame,
   StyledFrameWrapper,
-} from './styles';
+} from './styled';
 
 const PopupPlayer: FC = () => {
   const selectedFilmId = useTypedSelector(getSelectedFilmId);

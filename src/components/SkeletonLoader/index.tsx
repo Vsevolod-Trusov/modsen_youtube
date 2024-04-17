@@ -7,7 +7,7 @@ import {
   StyledLoader,
   StyledSecondLine,
   StyledWrapper,
-} from './styles';
+} from './styled';
 
 const SkeletonLoader: FC = () => {
   return (

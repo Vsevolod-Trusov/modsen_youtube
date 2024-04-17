@@ -5,7 +5,7 @@ import {
   StyledFrameImageSkeleton,
   StyledFrameLoader,
   StyledFrameWrapper,
-} from './styles';
+} from './styled';
 
 const FrameSkeletonLoader: FC = () => {
   return (

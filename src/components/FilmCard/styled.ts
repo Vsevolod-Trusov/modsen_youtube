@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX } from '@/contants';
+
 const StyledContainer = styled('section')(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'column',
   flexBasis: '25%',
   maxWidth: '332px',
   padding: '20px 12px',
@@ -24,6 +24,8 @@ const StyledContainer = styled('section')(({ theme }) => ({
   [`@media ${theme.breakpoints.sm}`]: {
     flexBasis: '100%',
   },
+
+  ...DISPLAY_FLEX,
 }));
 
 const StyledPreviewSection = styled('div')({

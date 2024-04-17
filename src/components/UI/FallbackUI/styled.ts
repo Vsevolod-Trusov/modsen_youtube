@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
 
+import { DISPLAY_FLEX } from '@/contants';
+
 const StyledContainer = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
+  ...DISPLAY_FLEX,
   width: '30%',
   margin: '0 auto',
 });
