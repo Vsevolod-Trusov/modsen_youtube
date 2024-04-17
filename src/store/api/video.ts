@@ -1,12 +1,18 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-import { IMDB_HEADERS, METHODS, REDUCERS_PATH, URLS } from '@/contants';
+import {
+  IMDB_HEADERS,
+  IMDB_URLBASE,
+  METHODS,
+  REDUCERS_PATH,
+  URLS,
+} from '@/contants';
 import type { Film } from '@/types';
 
 export const videoApi = createApi({
   reducerPath: REDUCERS_PATH.VIDEO,
   baseQuery: fetchBaseQuery({
-    baseUrl: 'data.json', // IMDB_URLBASE,
+    baseUrl: IMDB_URLBASE,
   }),
   endpoints: (builder) => ({
     getFilms: builder.query<Film[], string>({
