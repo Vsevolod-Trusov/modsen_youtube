@@ -1,5 +1,5 @@
 import { EMPTY_STRING } from '@/contants';
-import { IDebounceHelper } from '@/types';
+import { IDebounceHelper, IStorage } from '@/types';
 import { getKey } from '@/utils';
 
 const debounceHandler = ({
@@ -9,17 +9,22 @@ const debounceHandler = ({
   debounceCachedFilms,
   debounceFindFilms,
 }: IDebounceHelper) => {
-  const key = getKey(searchValue, category);
+  const newKey = getKey(searchValue, category);
 
-  if (key === EMPTY_STRING) return;
+  if (newKey === EMPTY_STRING) return;
 
-  if (elasticStorage[key]) {
-    debounceCachedFilms(elasticStorage[key]);
+  const indexStorageCeil = elasticStorage.storage.findIndex(
+    ({ key }: IStorage) => key === newKey,
+  );
+  if (indexStorageCeil !== -1) {
+    console.log('here');
+
+    debounceCachedFilms(elasticStorage.storage[indexStorageCeil].value);
 
     return;
   }
 
-  debounceFindFilms(searchValue, key);
+  debounceFindFilms(searchValue, newKey);
 };
 
 export { debounceHandler };

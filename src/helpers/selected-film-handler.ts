@@ -1,6 +1,6 @@
 import { EMPTY_STRING } from '@/contants';
-import { saveSearchResult } from '@/store/slices';
-import { Film, ISelectedFilmHelper } from '@/types';
+import { saveSelectedFilm } from '@/store/slices';
+import { Film, ISelectedFilmHelper, ISelectedFilmsStorage } from '@/types';
 import { getKey } from '@/utils';
 
 const selectedFilmHandler = ({
@@ -12,10 +12,15 @@ const selectedFilmHandler = ({
 }: ISelectedFilmHelper) => {
   if (!selectedFilmId) return;
 
-  const key = getKey(selectedFilmId);
+  const newKey = getKey(selectedFilmId);
 
-  if (elasticStorage[key]) {
-    setFilm(elasticStorage[key] as Film);
+  const indexStorageCeil = elasticStorage.selectedFilmsStorage.findIndex(
+    ({ key }: ISelectedFilmsStorage) => key === newKey,
+  );
+  if (indexStorageCeil !== -1) {
+    setFilm(
+      elasticStorage.selectedFilmsStorage[indexStorageCeil].value as Film,
+    );
 
     return;
   }
@@ -24,7 +29,7 @@ const selectedFilmHandler = ({
     if (!data) return;
 
     setFilm(data);
-    dispatch(saveSearchResult({ key, result: data }));
+    dispatch(saveSelectedFilm({ key: newKey, result: data }));
   });
 };
 

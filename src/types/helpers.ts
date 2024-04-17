@@ -11,6 +11,7 @@ import { Dispatch } from 'react';
 
 import { REDUCERS_PATH } from '@/contants';
 
+import { IElastic } from './store';
 import { Film } from './video';
 
 interface IDebounceHelper {
@@ -18,7 +19,7 @@ interface IDebounceHelper {
   category?: string;
   debounceCachedFilms: (...args: any) => void;
   debounceFindFilms: (...args: any) => void;
-  elasticStorage: any;
+  elasticStorage: IElastic;
 }
 
 interface ISelectedFilmHelper extends Pick<IDebounceHelper, 'elasticStorage'> {
