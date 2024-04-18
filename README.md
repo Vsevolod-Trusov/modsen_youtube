@@ -36,16 +36,23 @@ Task of creation frontend-app for video searching
 
 Главная страница:
 
-![[Pasted image 20240418172210.png]]
+![Pasted image 20240418172210](https://github.com/Vsevolod-Trusov/modsen_youtube/assets/90185312/d1585a2d-3a70-48c5-a9b2-873bb31713a9)
 
 Фильтрация:
 
-![[Pasted image 20240418172301.png]]
+![image](https://github.com/Vsevolod-Trusov/modsen_youtube/assets/90185312/e9271d66-f9ca-422d-b491-7dddcc1763cc)
 
 Тема:
 
-![[Pasted image 20240418172326.png]]
+![Pasted image 20240418172326](https://github.com/Vsevolod-Trusov/modsen_youtube/assets/90185312/32bfda13-fc58-440b-ae75-6313052a2cea)
 
 Мобильная версия:
 
-![[Pasted image 20240418172356.png]]
+![image](https://github.com/Vsevolod-Trusov/modsen_youtube/assets/90185312/8bc4a1fd-7a58-46bc-93d9-0aa684b0ddc5)
+
+Меню:
+
+
+![image](https://github.com/Vsevolod-Trusov/modsen_youtube/assets/90185312/e47dc6e3-d7a8-4e4b-bd1a-22d855f270d9)
+
+
