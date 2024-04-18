@@ -16,6 +16,10 @@ const CATEGORIES = [
   'documentary',
 ];
 
+const enum KEY_CODES {
+  ENTER = 'Enum',
+}
+
 export {
   ALL_CATEGORY,
   AUTHOR_NAME,
@@ -23,6 +27,7 @@ export {
   DEBOUNCE_TIME,
   DEFAULT_AMOUNT,
   EMPTY_STRING,
+  KEY_CODES,
   NO_SUCH_FILMS,
   ZERO,
 };

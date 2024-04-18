@@ -1,9 +1,9 @@
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { SearchIcon } from '@/assets';
 import { Image, SearchButton, SearchInput } from '@/components';
-import { EMPTY_STRING } from '@/contants';
+import { EMPTY_STRING, KEY_CODES } from '@/contants';
 import { setSearchValue } from '@/store/slices';
 import { ISearchBar } from '@/types';
 
@@ -21,12 +21,19 @@ const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
     dispatch(setSearchValue(searchValue));
   };
 
+  const handlerKeyPress = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.code !== KEY_CODES.ENTER) return;
+
+    handleSearch();
+  };
+
   return (
     <StyledSearchSection>
       <SearchInput
         placeholder={placeholder}
         value={searchValue}
         onChange={handleSearchValue}
+        onKeyDown={handlerKeyPress}
       />
       <SearchButton onClick={handleSearch}>
         <StyledSearchImageWrapper>

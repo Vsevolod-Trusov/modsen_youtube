@@ -6,12 +6,13 @@ import { StyledInput } from './styled';
 
 const SearchInput: FC<
   PropsWithChildren<InputHTMLAttributes<HTMLInputElement>>
-> = ({ placeholder, value, onChange: handler }) => (
+> = ({ placeholder, value, onChange: handler, onKeyDown }) => (
   <StyledInput
     placeholder={placeholder}
     value={value}
     onChange={handler}
     data-test-id={TEST_IDS.SEARCH_INPUT_ID}
+    onKeyDown={onKeyDown}
   />
 );
 
