@@ -5,7 +5,7 @@ const ALL_CATEGORY = 'All';
 const NO_SUCH_FILMS = 'No Such Films';
 const ZERO = 0;
 const DEBOUNCE_TIME = 200;
-
+const TIME_PERIOD = 40;
 const CATEGORIES = [
   'All',
   'action',
@@ -36,5 +36,6 @@ export {
   KEY_CODES,
   NAV_LINKS,
   NO_SUCH_FILMS,
+  TIME_PERIOD,
   ZERO,
 };

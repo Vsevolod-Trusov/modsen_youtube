@@ -12,7 +12,11 @@ import {
   StyledScrollButtonContainer,
 } from './styled';
 
-const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
+const FilmsList: FC<IFilmsList> = ({
+  currentFilms,
+  handleGetMore,
+  endOfListRef,
+}) => (
   <StyledFilmsContainer>
     {currentFilms?.length ? (
       <>
@@ -32,6 +36,7 @@ const FilmsList: FC<IFilmsList> = ({ currentFilms, handleGetMore }) => (
             {DICTIONARY.SHOW_MORE}
           </ShowMoreButton>
         </StyledScrollButtonContainer>
+        <div ref={endOfListRef} id={'kek'} />
       </>
     ) : (
       <StyledMockContainer>

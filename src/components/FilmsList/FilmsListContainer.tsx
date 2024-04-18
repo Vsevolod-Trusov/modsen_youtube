@@ -1,7 +1,7 @@
-import React, { FC, useCallback, useMemo, useState } from 'react';
+import React, { FC, useCallback, useMemo, useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { DEBOUNCE_TIME, DEFAULT_AMOUNT, ZERO } from '@/constants';
+import { DEBOUNCE_TIME, DEFAULT_AMOUNT, TIME_PERIOD, ZERO } from '@/constants';
 import { debounceHandler } from '@/helpers';
 import { useDebouncedFunction, useTypedSelector } from '@/hooks';
 import { useLazyGetFilteredFilmsQuery } from '@/store/api';
@@ -19,12 +19,17 @@ import { getFilteredList } from '@/utils';
 import { FilmsList } from './FilmsList';
 
 const FilmsListContainer: FC = () => {
+  const endOfListRef = useRef<HTMLDivElement>(null);
   const films = useTypedSelector(getFilms);
   const category = useTypedSelector(getCategory);
   const searchValue = useTypedSelector(getSearchValue);
   const elasticStorage = useTypedSelector(getStorage);
   const [findFilms] = useLazyGetFilteredFilmsQuery();
   const dispatch = useDispatch();
+
+  const handleScrollToView = () => {
+    endOfListRef.current?.scrollIntoView();
+  };
   const debounceFindFilms = useDebouncedFunction({
     func: (searchValue, key) => {
       const filmsPromise = findFilms(searchValue);
@@ -58,7 +63,8 @@ const FilmsListContainer: FC = () => {
   );
   const handleGetMore = useCallback(() => {
     setAmount((prevState) => prevState + DEFAULT_AMOUNT);
-  }, [setAmount]);
+    setTimeout(() => handleScrollToView(), TIME_PERIOD);
+  }, [setAmount, handleScrollToView]);
   const filterFilms = useCallback(() => {
     debounceHandler({
       searchValue,
@@ -78,7 +84,11 @@ const FilmsListContainer: FC = () => {
   filterFilms();
 
   return (
-    <FilmsList currentFilms={currentFilms} handleGetMore={handleGetMore} />
+    <FilmsList
+      currentFilms={currentFilms}
+      handleGetMore={handleGetMore}
+      endOfListRef={endOfListRef}
+    />
   );
 };
 export default FilmsListContainer;
