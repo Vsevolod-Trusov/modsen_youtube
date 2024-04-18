@@ -9,6 +9,7 @@ const StyledContainer = styled('div')(({ theme }) => ({
 
   [`@media ${theme.breakpoints.sm}`]: {
     padding: '20px 10px',
+    flex: '0.1',
     justifyContent: 'space-around',
     alignItems: 'center',
     flexWrap: 'wrap',

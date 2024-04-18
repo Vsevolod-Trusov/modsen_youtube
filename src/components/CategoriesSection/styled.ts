@@ -26,10 +26,7 @@ const StyledWrapper = styled('div')(({ theme }) => ({
   columnGap: '5px',
 
   [`@media ${theme.breakpoints.sm}`]: {
-    maxWidth: '200px',
-    maxHeight: '100%',
     alignItems: 'flex-start',
-    overflow: 'hidden',
     rowGap: '5px',
   },
 }));
