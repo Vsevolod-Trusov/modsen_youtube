@@ -28,11 +28,11 @@ export const videoApi = createApi({
       },
     }),
     getFilteredFilms: builder.query<Film[], string>({
-      query: () => {
+      query: (filter) => {
         const controller = new AbortController();
 
         return {
-          url: URLS.BASE,
+          url: `?title=${filter}`,
           method: METHODS.GET,
           headers: IMDB_HEADERS,
           signal: controller.signal,

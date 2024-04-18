@@ -1,4 +1,4 @@
-export const IMDB_URLBASE = 'https://imdb-top-100-movies.p.rapidapi.com';
+export const IMDB_URLBASE = 'https://6620b4643bf790e070b05b43.mockapi.io/films'; // 'https://imdb-top-100-movies.p.rapidapi.com';
 export const enum METHODS {
   GET = 'GET',
 }
