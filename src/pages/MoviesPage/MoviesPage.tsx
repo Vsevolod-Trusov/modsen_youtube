@@ -5,6 +5,7 @@ import {
   Footer,
   Header,
   Main,
+  Menu,
   SkeletonLoadersList,
 } from '@/components';
 import { DEFAULT_AMOUNT } from '@/constants';
@@ -27,6 +28,7 @@ const MoviesPage: FC = () => {
         )}
       </Main>
       <Footer />
+      <Menu />
     </StyledWrapper>
   );
 };

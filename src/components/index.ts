@@ -11,6 +11,7 @@ export { FrameSkeletonLoader } from './FrameSkeletonLoader';
 export { Header } from './Header';
 export { Logo } from './Logo';
 export { Main } from './Main';
+export { Menu } from './Menu';
 export { MetadataSection } from './MetadataSection';
 export { PopupPlayer } from './PopupPlayer';
 export { SearchBar } from './SearchBar';

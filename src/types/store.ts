@@ -2,6 +2,7 @@ import { Film } from './video';
 
 export interface ITheme {
   current: boolean;
+  isMenuOpened: boolean;
 }
 
 export interface IFilmStore {

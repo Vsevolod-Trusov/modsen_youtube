@@ -8,20 +8,21 @@ const initials: ITheme = {
   current: JSON.parse(
     localStorage.getItem(LOCALSTORAGE_NAMES.THEME) || DEFAULT_THEME,
   )?.current,
+  isMenuOpened: false,
 };
 
 const theme = createSlice({
   name: SLICE_NAMES.THEME,
   initialState: initials,
   reducers: {
-    toggleTheme: (state, { payload }) => {
-      return { current: payload };
-    },
+    toggleTheme: (state, { payload }) => ({ ...state, current: payload }),
+    openMenu: (state, { payload }) => ({ ...state, isMenuOpened: payload }),
   },
 });
 
-export const { toggleTheme } = theme.actions;
+export const { toggleTheme, openMenu } = theme.actions;
 
 export const getCurrentThemeValue = (state: RootState) => state.theme.current;
+export const getMenuOpened = (state: RootState) => state.theme.isMenuOpened;
 
 export default theme.reducer;

@@ -20,6 +20,12 @@ const enum KEY_CODES {
   ENTER = 'Enter',
 }
 
+const enum NAV_LINKS {
+  CONTACTS = 'Контакты',
+  NEWS = 'Новости',
+  MAIN = 'Главная',
+}
+
 export {
   ALL_CATEGORY,
   AUTHOR_NAME,
@@ -28,6 +34,7 @@ export {
   DEFAULT_AMOUNT,
   EMPTY_STRING,
   KEY_CODES,
+  NAV_LINKS,
   NO_SUCH_FILMS,
   ZERO,
 };
