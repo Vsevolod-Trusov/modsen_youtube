@@ -8,9 +8,16 @@ const StyledSearchSection = styled('div')({
   height: '100%',
 });
 
+const StyledSearchWrapper = styled('div')({
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+});
+
 const StyledSearchImageWrapper = styled('div')({
   display: 'flex',
   width: '80%',
 });
 
-export { StyledSearchImageWrapper, StyledSearchSection };
+export { StyledSearchImageWrapper, StyledSearchSection, StyledSearchWrapper };

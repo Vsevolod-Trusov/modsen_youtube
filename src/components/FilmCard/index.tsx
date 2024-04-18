@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { Image } from '@/components';
 import { TEST_IDS } from '@/constants';
-import { setIsPlayerOpened, setSelectedFilmId } from '@/store/slices';
+import { openPopupHandler } from '@/helpers';
 import { IImage } from '@/types';
 
 import {
@@ -27,16 +27,12 @@ const FilmCard: FC<IImage> = ({
 }) => {
   const dispatch = useDispatch();
 
-  const handleOpenPlayer = () => {
-    dispatch(setIsPlayerOpened(true));
-    dispatch(setSelectedFilmId(id));
+  const handleOpen = () => {
+    openPopupHandler({ dispatch, id });
   };
 
   return (
-    <StyledContainer
-      onClick={handleOpenPlayer}
-      data-test-id={TEST_IDS.FILM_ITEM_ID}
-    >
+    <StyledContainer onClick={handleOpen} data-test-id={TEST_IDS.FILM_ITEM_ID}>
       <StyledPreviewSection>
         <Image src={preview} alt={'img'} data-test-id={TEST_IDS.IMAGE_ID} />
       </StyledPreviewSection>

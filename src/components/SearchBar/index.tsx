@@ -2,14 +2,20 @@ import React, { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { SearchIcon } from '@/assets';
-import { Image, SearchButton, SearchInput } from '@/components';
+import { ElasticSearch, Image, SearchButton, SearchInput } from '@/components';
 import { EMPTY_STRING, KEY_CODES } from '@/constants';
-import { setSearchValue } from '@/store/slices';
+import { useTypedSelector } from '@/hooks';
+import { getSearchValue, setSearchValue } from '@/store/slices';
 import { ISearchBar } from '@/types';
 
-import { StyledSearchImageWrapper, StyledSearchSection } from './styled';
+import {
+  StyledSearchImageWrapper,
+  StyledSearchSection,
+  StyledSearchWrapper,
+} from './styled';
 
 const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
+  const searchingValue = useTypedSelector(getSearchValue);
   const dispatch = useDispatch();
   const [searchValue, setValue] = useState<string>(EMPTY_STRING);
 
@@ -29,17 +35,20 @@ const SearchBar: FC<ISearchBar> = ({ placeholder }) => {
 
   return (
     <StyledSearchSection>
-      <SearchInput
-        placeholder={placeholder}
-        value={searchValue}
-        onChange={handleSearchValue}
-        onKeyDown={handlerKeyPress}
-      />
-      <SearchButton onClick={handleSearch}>
-        <StyledSearchImageWrapper>
-          <Image src={SearchIcon} />
-        </StyledSearchImageWrapper>
-      </SearchButton>
+      <StyledSearchWrapper>
+        <SearchInput
+          placeholder={placeholder}
+          value={searchValue}
+          onChange={handleSearchValue}
+          onKeyDown={handlerKeyPress}
+        />
+        <SearchButton onClick={handleSearch}>
+          <StyledSearchImageWrapper>
+            <Image src={SearchIcon} />
+          </StyledSearchImageWrapper>
+        </SearchButton>
+        {!!searchingValue?.length && <ElasticSearch />}
+      </StyledSearchWrapper>
     </StyledSearchSection>
   );
 };

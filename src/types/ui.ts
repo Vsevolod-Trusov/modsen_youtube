@@ -25,4 +25,7 @@ interface ISearchBar {
   placeholder?: string;
 }
 
-export { IFilterButton, IIconButton, IImage, ILogo, ISearchBar };
+interface IElasticCard
+  extends Pick<IImage, 'title' | 'author' | 'createdAt' | 'id'> {}
+
+export { IElasticCard, IFilterButton, IIconButton, IImage, ILogo, ISearchBar };

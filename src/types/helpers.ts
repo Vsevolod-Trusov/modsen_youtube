@@ -43,4 +43,9 @@ interface ISelectedFilmHelper extends Pick<IDebounceHelper, 'elasticStorage'> {
   >;
 }
 
-export { IDebounceHelper, ISelectedFilmHelper };
+interface IPopupHalper {
+  dispatch: ReduxDispatch<UnknownAction>;
+  id: string;
+}
+
+export { IDebounceHelper, IPopupHalper, ISelectedFilmHelper };

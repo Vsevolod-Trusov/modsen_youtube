@@ -1,6 +1,8 @@
 export { CategoriesSection } from './CategoriesSection';
 export { CompanySection } from './CompanySection';
 export { CustomThemeProvider } from './CustomThemeProvider';
+export { ElasticCard } from './ElasticCard';
+export { ElasticSearch } from './ElasticSearch';
 export { ErrorBoundary } from './ErrorBoundary';
 export { FilmCard } from './FilmCard';
 export { FilmsList } from './FilmsList';
