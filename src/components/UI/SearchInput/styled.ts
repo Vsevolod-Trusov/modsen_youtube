@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
+import { FONT_FAMILY, HOVER_ANIMATION } from '@/constants';
 
 const StyledInput = styled('input')(({ theme }) => ({
   width: '570px',

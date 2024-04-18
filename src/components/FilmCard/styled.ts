@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { DISPLAY_FLEX, FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
+import { DISPLAY_FLEX, FONT_FAMILY, HOVER_ANIMATION } from '@/constants';
 
 const StyledContainer = styled('section')(({ theme }) => ({
   flexBasis: '25%',

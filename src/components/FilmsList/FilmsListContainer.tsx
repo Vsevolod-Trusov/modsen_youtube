@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useMemo, useState } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { DEBOUNCE_TIME, DEFAULT_AMOUNT, ZERO } from '@/contants';
+import { DEBOUNCE_TIME, DEFAULT_AMOUNT, ZERO } from '@/constants';
 import { debounceHandler } from '@/helpers';
 import { useDebouncedFunction, useTypedSelector } from '@/hooks';
 import { useLazyGetFilteredFilmsQuery } from '@/store/api';

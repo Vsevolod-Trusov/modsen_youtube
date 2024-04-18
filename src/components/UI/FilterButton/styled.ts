@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { FONT_FAMILY, HOVER_ANIMATION } from '@/contants';
+import { FONT_FAMILY, HOVER_ANIMATION } from '@/constants';
 
 const StyledFilterButton = styled('button')(({ theme }) => ({
   width: 'auto',

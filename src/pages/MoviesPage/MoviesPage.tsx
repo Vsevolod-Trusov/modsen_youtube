@@ -7,7 +7,7 @@ import {
   Main,
   SkeletonLoadersList,
 } from '@/components';
-import { DEFAULT_AMOUNT } from '@/contants';
+import { DEFAULT_AMOUNT } from '@/constants';
 import { useTypedSelector } from '@/hooks';
 import { getIsLoading } from '@/store/slices';
 

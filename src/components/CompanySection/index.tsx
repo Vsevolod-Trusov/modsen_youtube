@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 
-import { DICTIONARY } from '@/contants';
+import { DICTIONARY } from '@/constants';
 
 import { StyledContainer } from './styled';
 

@@ -17,7 +17,7 @@ const CATEGORIES = [
 ];
 
 const enum KEY_CODES {
-  ENTER = 'Enum',
+  ENTER = 'Enter',
 }
 
 export {

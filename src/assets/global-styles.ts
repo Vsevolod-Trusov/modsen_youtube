@@ -5,7 +5,7 @@ import {
   INIT_PROPERTIES,
   SCROLL_BUTTON_KEYFRAMES,
   SKELETON_ANIMATION_KEYFRAMES,
-} from '@/contants';
+} from '@/constants';
 
 const getGlobalStyles = () => createGlobalStyle`
      ${INIT_PROPERTIES}

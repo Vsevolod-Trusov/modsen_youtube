@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { SLICE_NAMES } from '@/contants';
+import { SLICE_NAMES } from '@/constants';
 import { RootState } from '@/store';
 import { IElastic } from '@/types';
 

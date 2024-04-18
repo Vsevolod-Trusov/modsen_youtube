@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, PropsWithChildren } from 'react';
 
-import { TEST_IDS } from '@/contants';
+import { TEST_IDS } from '@/constants';
 
 import { StyledInput } from './styled';
 

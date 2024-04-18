@@ -11,7 +11,7 @@ import {
   Twitter,
 } from '@/assets';
 import { IconButton } from '@/components';
-import { DICTIONARY, LINKS } from '@/contants';
+import { DICTIONARY, LINKS } from '@/constants';
 import { useTypedSelector } from '@/hooks';
 import { getCurrentThemeValue } from '@/store/slices';
 

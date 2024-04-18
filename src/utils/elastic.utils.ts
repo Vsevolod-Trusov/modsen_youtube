@@ -1,4 +1,4 @@
-import { ALL_CATEGORY, EMPTY_STRING } from '@/contants';
+import { ALL_CATEGORY, EMPTY_STRING } from '@/constants';
 import { Film } from '@/types';
 
 export const getFilteredList = (

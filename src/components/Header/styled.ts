@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { DISPLAY_FLEX } from '@/contants';
+import { DISPLAY_FLEX } from '@/constants';
 
 const StyledHeaderContainer = styled('header')(({ theme }) => ({
   height: '160px',

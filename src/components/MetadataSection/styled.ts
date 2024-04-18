@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { DISPLAY_FLEX, FONT_FAMILY } from '@/contants';
+import { DISPLAY_FLEX, FONT_FAMILY } from '@/constants';
 
 const StyledContainer = styled('div')(({ theme }) => ({
   ...DISPLAY_FLEX,

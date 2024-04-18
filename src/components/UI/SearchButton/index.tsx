@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
 
-import { TEST_IDS } from '@/contants';
+import { TEST_IDS } from '@/constants';
 
 import { StyledButton } from './styled';
 

@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Image } from '@/components';
-import { TEST_IDS } from '@/contants';
+import { TEST_IDS } from '@/constants';
 import { setIsPlayerOpened, setSelectedFilmId } from '@/store/slices';
 import { IImage } from '@/types';
 

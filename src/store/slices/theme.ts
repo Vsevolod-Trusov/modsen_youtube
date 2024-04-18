@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { DEFAULT_THEME, LOCALSTORAGE_NAMES, SLICE_NAMES } from '@/contants';
+import { DEFAULT_THEME, LOCALSTORAGE_NAMES, SLICE_NAMES } from '@/constants';
 import { RootState } from '@/store';
 import { ITheme } from '@/types';
 

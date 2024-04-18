@@ -1,4 +1,4 @@
-import { PALETTE, SIZES } from '@/contants';
+import { PALETTE, SIZES } from '@/constants';
 
 const BLACK_THEME = {
   hoverAnimationDuration: '0.3s',

@@ -1,4 +1,4 @@
-import { EMPTY_STRING } from '@/contants';
+import { EMPTY_STRING } from '@/constants';
 import { IDebounceHelper, IStorage } from '@/types';
 import { getKey } from '@/utils';
 

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { SearchIcon } from '@/assets';
 import { Image, SearchButton, SearchInput } from '@/components';
-import { EMPTY_STRING, KEY_CODES } from '@/contants';
+import { EMPTY_STRING, KEY_CODES } from '@/constants';
 import { setSearchValue } from '@/store/slices';
 import { ISearchBar } from '@/types';
 

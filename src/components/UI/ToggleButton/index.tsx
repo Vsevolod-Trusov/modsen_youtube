@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { LOCALSTORAGE_NAMES, TEST_IDS } from '@/contants';
+import { LOCALSTORAGE_NAMES, TEST_IDS } from '@/constants';
 import { useTypedSelector } from '@/hooks';
 import { getCurrentThemeValue, toggleTheme } from '@/store/slices';
 

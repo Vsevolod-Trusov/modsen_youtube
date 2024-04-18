@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { FONT_FAMILY, HOVER_SCROLL_ANIMATION } from '@/contants';
+import { FONT_FAMILY, HOVER_SCROLL_ANIMATION } from '@/constants';
 
 const StyledButton = styled('button')(({ theme }) => ({
   width: '192px',

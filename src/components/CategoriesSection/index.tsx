@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { FilterButton } from '@/components/UI';
-import { CATEGORIES, TEST_IDS } from '@/contants';
+import { CATEGORIES, TEST_IDS } from '@/constants';
 
 import { StyledContainer, StyledWrapper } from './styled';
 

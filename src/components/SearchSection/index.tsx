@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { Logo, MenuButton, SearchBar, ToggleButton } from '@/components';
-import { DICTIONARY } from '@/contants';
+import { DICTIONARY } from '@/constants';
 
 import {
   HideContainer,

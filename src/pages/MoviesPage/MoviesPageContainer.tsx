@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
-import { EMPTY_STRING } from '@/contants';
+import { EMPTY_STRING } from '@/constants';
 import { useTypedSelector } from '@/hooks';
 import { useLazyGetFilmsQuery } from '@/store/api';
 import { getFilms, setFilms, setIsLoading } from '@/store/slices';

@@ -6,7 +6,7 @@ import {
   METHODS,
   REDUCERS_PATH,
   URLS,
-} from '@/contants';
+} from '@/constants';
 import type { Film } from '@/types';
 
 export const videoApi = createApi({

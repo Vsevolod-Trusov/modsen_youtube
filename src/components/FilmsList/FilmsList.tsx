@@ -3,7 +3,7 @@ import React, { FC } from 'react';
 import { AvatarIcon } from '@/assets';
 import { FilmCard, PopupPlayer } from '@/components';
 import { ShowMoreButton } from '@/components/UI';
-import { AUTHOR_NAME, DICTIONARY, NO_SUCH_FILMS } from '@/contants';
+import { AUTHOR_NAME, DICTIONARY, NO_SUCH_FILMS } from '@/constants';
 import { IFilmsList } from '@/types';
 
 import {

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { EMPTY_STRING, SLICE_NAMES } from '@/contants';
+import { EMPTY_STRING, SLICE_NAMES } from '@/constants';
 import { RootState } from '@/store';
 import { IFilmStore } from '@/types';
 

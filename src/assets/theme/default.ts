@@ -1,4 +1,4 @@
-import { PALETTE, SIZES } from '@/contants';
+import { PALETTE, SIZES } from '@/constants';
 
 const DEFAULT_THEME = {
   hoverAnimationDuration: '0.3s',

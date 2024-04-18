@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { HOVER_ANIMATION } from '@/contants';
+import { HOVER_ANIMATION } from '@/constants';
 
 const StyledButton = styled('button')(({ theme }) => ({
   display: 'flex',

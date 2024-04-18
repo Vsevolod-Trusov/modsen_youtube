@@ -9,7 +9,7 @@ import {
 } from '@reduxjs/toolkit/query';
 import { Dispatch } from 'react';
 
-import { REDUCERS_PATH } from '@/contants';
+import { REDUCERS_PATH } from '@/constants';
 
 import { IElastic } from './store';
 import { Film } from './video';

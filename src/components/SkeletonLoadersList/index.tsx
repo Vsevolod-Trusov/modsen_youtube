@@ -2,7 +2,7 @@ import React, { FC, useMemo } from 'react';
 
 import { SkeletonLoader } from '@/components';
 import { StyledFilmsContainer } from '@/components/FilmsList/styled';
-import { ZERO } from '@/contants';
+import { ZERO } from '@/constants';
 import { ISkeletonLoadersList } from '@/types';
 
 const SkeletonLoadersList: FC<ISkeletonLoadersList> = ({ amount }) => {
